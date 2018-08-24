@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Top from './components/containers/Top'
+import Bottom from './components/containers/Bottom'
 
 class App extends Component {
   style = () => ({
@@ -13,10 +14,9 @@ class App extends Component {
   })
   render () {
     return (
-      <div>
+      <div style={this.style().app}>
         <Top />
-        <div style={this.style().app}>
-        </div>
+        <Bottom />
       </div>
     )
   }

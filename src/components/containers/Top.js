@@ -131,7 +131,7 @@ export default class NavTop extends React.Component {
         
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
-          <Route exact path='/projects' component={Projects} />
+          <Route path='/projects' component={Projects} />
         
       </div>
       </Router>
