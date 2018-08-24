@@ -4,13 +4,12 @@ import Home from '../../pages/Home'
 import About from '../../pages/About'
 import Projects from '../../pages/Projects'
 import {
+  Container,
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem,
-  NavLink,
-  Tooltip
+  NavItem
 } from 'reactstrap'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -52,18 +51,30 @@ export default class NavTop extends React.Component {
   }
 
   style = () => ({
+    container: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100%',
+      width: '100%',
+      margin: 0,
+      padding: 0
+    },
     navbar: {
       justifyContent: 'center',
       alignContent: 'center',
       border: 'none',
       boxShadow: 'none',
       fontFamily: `'Nunito', sans-serif`,
-      color: '#fff',
+      color: this.props.backgroundLight ? '#333' : '#fff',
+      transition: 'all 1s ease',
       fontWeight: 300
     },
     brand: {
       position: 'absolute',
-      top: 0
+      top: 0,
+      color: this.props.backgroundLight ? '#333' : '#fff',
+      transition: 'all 1s ease'
     },
     icon: {
       fontSize: 20
@@ -74,8 +85,9 @@ export default class NavTop extends React.Component {
     },
     link: {
       fontSize: 16,
-      color: '#fff',
-      fontWeight: 400
+      fontWeight: 400,
+      color: this.props.backgroundLight ? '#333' : '#fff',
+      transition: 'all 1s ease'
     }
   })
 
@@ -84,17 +96,17 @@ export default class NavTop extends React.Component {
 
     return (
       <Router>
-      <div>
+      <Container style={this.style().container} fluid>
         <Navbar
           style={this.style().navbar}
           className='transparent fixed-top'
-          dark
           expand='md'
         >
           <Link
             style={this.style().brand}
             className='navbar-brand mt-2 mt-md-3'
             to='/'
+            onClick={() => this.props.updatePage('Home')}
           >
             Joseph Emswiler
           </Link>
@@ -112,6 +124,7 @@ export default class NavTop extends React.Component {
                   className='nav-link'
                   style={this.style().link}
                   to='/projects'
+                  onClick={() => this.props.updatePage('Projects')}
                 >
                   Projects
                 </Link>
@@ -121,6 +134,7 @@ export default class NavTop extends React.Component {
                   className='nav-link'
                   style={this.style().link}
                   to='/about'
+                  onClick={() => this.props.updatePage('About')}
                 >
                   About
                 </Link>
@@ -133,7 +147,7 @@ export default class NavTop extends React.Component {
           <Route exact path='/about' component={About} />
           <Route path='/projects' component={Projects} />
         
-      </div>
+      </Container>
       </Router>
     )
   }

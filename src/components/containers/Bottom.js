@@ -13,10 +13,12 @@ export default class NavBottom extends Component {
 
     this.state = {
       tooltipOpen: false,
-      gitHubColor: this.mouseLeaveColor,
-      linkedInColor: this.mouseLeaveColor,
-      emailColor: this.mouseLeaveColor,
-      width: window.innerWidth
+      gitHubColor: 'rgba(0,0,0,.5)',
+      linkedInColor: 'rgba(0,0,0,.5)',
+      emailColor: 'rgba(0,0,0,.5)',
+      width: window.innerWidth,
+      mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff',
+      mouseLeaveColor: 'rgba(0,0,0,.5)',
     }
   }
 
@@ -36,20 +38,24 @@ export default class NavBottom extends Component {
     })
   }
 
-  mouseEnterColor = '#fff'
-  mouseLeaveColor = 'rgba(0,0,0,.5)'
-
+  componentDidUpdate(prevProps) { 
+    if ( prevProps.backgroundLight !== this.props.backgroundLight ) {
+      this.setState({ 
+        mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff'
+      })
+    }
+  }
 
   hoverGitHub = event => {
     switch (event.type) {
       case 'mouseenter':
         this.setState({
-          gitHubColor: this.mouseEnterColor
+          gitHubColor: this.state.mouseEnterColor
         })
         break
       case 'mouseleave':
         this.setState({
-          gitHubColor: this.mouseLeaveColor
+          gitHubColor: this.state.mouseLeaveColor
         })
         break
       default:
@@ -60,12 +66,12 @@ export default class NavBottom extends Component {
     switch (event.type) {
       case 'mouseenter':
         this.setState({
-          linkedInColor: this.mouseEnterColor
+          linkedInColor: this.state.mouseEnterColor
         })
         break
       case 'mouseleave':
         this.setState({
-          linkedInColor: this.mouseLeaveColor
+          linkedInColor: this.state.mouseLeaveColor
         })
         break
       default:
@@ -76,12 +82,12 @@ export default class NavBottom extends Component {
     switch (event.type) {
       case 'mouseenter':
         this.setState({
-          emailColor: this.mouseEnterColor
+          emailColor: this.state.mouseEnterColor
         })
         break
       case 'mouseleave':
         this.setState({
-          emailColor: this.mouseLeaveColor
+          emailColor: this.state.mouseLeaveColor
         })
         break
       default:

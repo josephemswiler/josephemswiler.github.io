@@ -1,0 +1,32 @@
+.star-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  z-index: -1; }
+
+.star-wrapper:first-child {
+  -webkit-clip-path: circle(20%);
+  clip-path: circle(20%);
+  background: #333;
+  transition: all 2s ease; }
+
+.star-wrapper:last-child {
+  -webkit-clip-path: circle(20%);
+  clip-path: circle(20%);
+  background: #333;
+  transition: all 2s ease; }
+
+.star-wrapper:first-child:hover {
+  -webkit-clip-path: polygon(0 0, 0 100vh, 100% 100vh);
+  clip-path: circle(100%);
+  background: #333;
+  transition: all 2s ease; }
+
+.star-wrapper:last-child:hover {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh);
+  clip-path: circle(100%);
+  background: #333;
+  transition: all 2s ease; }
