@@ -55,8 +55,7 @@ export default class HomeCard extends Component {
               </Button>
             </Link>
           </CardBody>
-          <Route path='/projects/apps' component={Apps} />
-        <Route path='/projects/ui-ux' component={UIUX} />
+     
 
         </Card>
 

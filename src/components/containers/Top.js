@@ -183,10 +183,15 @@ export default class NavTop extends React.Component {
             path='/projects'
             render={props => <Projects updatePage={this.props.updatePage} />}
           />
+                <Route
+            path='/projects/apps'
+            render={props => <Projects updatePage={this.props.updatePage} />}
+          />
           <Route
             path='/skills'
             render={props => <Skills updatePage={this.props.updatePage} />}
           />
+          
 
         </Container>
       </Router>
