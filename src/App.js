@@ -53,7 +53,7 @@ class App extends Component {
   render () {
     return (
       <div style={this.style().app}>
-        <Top backgroundLight={this.state.backgroundLight} updatePage={this.updatePage} toggleOverlay={this.toggleOverlay} />
+        <Top backgroundLight={this.state.backgroundLight} page={this.state.page} updatePage={this.updatePage} toggleOverlay={this.toggleOverlay} />
         <Overlay toggleOverlay={this.state.toggleOverlay} />
         <Bottom backgroundLight={this.state.backgroundLight} page={this.state.page} />
       </div>

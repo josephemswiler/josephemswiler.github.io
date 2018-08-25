@@ -22,6 +22,7 @@ export default class Home extends Component {
   })
 
   render () {
+
     return (
       <Container style={this.style().container} fluid>
         <Card />
