@@ -32,7 +32,6 @@ export default class NavTop extends React.Component {
 
   componentDidMount () {
     window.addEventListener('resize', this.windowResize)
-    console.log(this.props)
   }
 
   windowResize = () => {
@@ -43,7 +42,7 @@ export default class NavTop extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     })
-    // this.props.toggleOverlay()
+    this.props.toggleOverlay()
   }
 
   tooltipToggle () {
@@ -92,6 +91,10 @@ export default class NavTop extends React.Component {
       transition: 'all 1s ease'
     }
   })
+
+  findRoute = page => {
+    console.log(page)
+  }
 
   render () {
     let toggleIcon = this.state.isOpen ? 'angle-up' : 'angle-down'
@@ -155,10 +158,10 @@ export default class NavTop extends React.Component {
           </Collapse>
         </Navbar>
         
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route path='/projects' component={Projects} />
-          <Route path='/skills' component={Skills} />
+          <Route exact path='/' render={props => <Home updatePage={this.props.updatePage} />}  />
+          <Route exact path='/about' render={props => <About updatePage={this.props.updatePage} />}  />
+          <Route path='/projects' render={props => <Projects updatePage={this.props.updatePage} />}  />
+          <Route path="/skills" render={props => <Skills updatePage={this.props.updatePage} />} />
         
       </Container>
       </Router>

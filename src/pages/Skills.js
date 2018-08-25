@@ -3,18 +3,26 @@ import { Container, Row, Col } from 'reactstrap'
 import api from '../utils/api'
 
 export default class Skills extends Component {
+
+  componentDidMount() {
+    this.props.updatePage('Skills')
+  }
+
   style = () => ({
     container: {
       margin: 0,
-      padding: 0,
-      maxWidth: '100%'
+      padding: 20,
+      paddingTop: 80,
+      maxWidth: '100%',
+      height: '100%'
     },
     techListWrapper: {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      padding: 0
+      padding: 0,
+      paddingBottom: '5rem',
     },
     iconWrapper: {
       display: 'flex',

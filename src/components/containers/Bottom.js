@@ -96,11 +96,15 @@ export default class NavBottom extends Component {
 
   style = () => ({
     container: {
-      position: 'absolute',
-      bottom: '.25rem',
+      position: this.props.page === 'Skills' ? 'fixed' : 'absolute',
+      bottom: 0,
+      paddingBottom: '.25rem',
+      paddingTop: '.25rem',
       width: '100%',
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      background:  this.props.page === 'Skills' ? '#fff' : 'transparent',
+      transition: 'all 2s ease'
     },
     link: {
       margin: 15,

@@ -4,6 +4,11 @@ import Card from '../components/elements/Card'
 import './Home.css'
 
 export default class Home extends Component {
+
+  componentDidMount() {
+    this.props.updatePage('Home')
+  }
+  
   style = () => ({
     container: {
       display: 'flex',
@@ -12,11 +17,10 @@ export default class Home extends Component {
       height: '100%',
       width: '100%',
       margin: 0,
-      padding: 0,
-      background: this.props.backgroundLight ? '#fff' : '#333',
-      color: this.props.backgroundLight ? '#333' : '#fff',
+      padding: 0
     }
   })
+
   render () {
     return (
       <Container style={this.style().container} fluid>

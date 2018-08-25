@@ -7,7 +7,9 @@ class App extends Component {
     super (props) 
 
     this.state = {
-      backgroundLight: false
+      backgroundLight: null,
+      page: null,
+      toggleOverlay: false
     }
   }
 
@@ -25,7 +27,14 @@ class App extends Component {
       default:
     }
     this.setState({
-      backgroundLight: pageLight
+      backgroundLight: pageLight,
+      page: page
+    })
+  }
+
+  toggleOverlay = () => {
+    this.setState({
+      toggleOverlay: !this.state.toggleOverlay
     })
   }
 
@@ -36,14 +45,16 @@ class App extends Component {
       alignItems: 'center',
       height: '100vh',
       width: '100vw',
+      background: this.state.backgroundLight ? '#fff' : '#333',
+      color: this.state.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease'
     }
   })
   render () {
     return (
       <div style={this.style().app}>
-        <Top backgroundLight={this.state.backgroundLight} updatePage={this.updatePage} />
-        <Bottom backgroundLight={this.state.backgroundLight} />
+        <Top backgroundLight={this.state.backgroundLight} updatePage={this.updatePage} toggleOverlay={this.toggleOverlay} />
+        <Bottom backgroundLight={this.state.backgroundLight} page={this.state.page} />
       </div>
     )
   }
