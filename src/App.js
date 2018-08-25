@@ -11,7 +11,6 @@ class App extends Component {
     }
   }
 
-
   updatePage = page => {
     console.log(page)
     let pageLight = false
@@ -20,6 +19,7 @@ class App extends Component {
       case 'About':
       break
       case 'Projects':
+      case 'Skills':
       pageLight = true
       break
       default:
@@ -36,8 +36,6 @@ class App extends Component {
       alignItems: 'center',
       height: '100vh',
       width: '100vw',
-      background: this.state.backgroundLight ? '#fff' : '#333',
-      color: this.state.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease'
     }
   })

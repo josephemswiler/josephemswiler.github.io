@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from '../../pages/Home'
 import About from '../../pages/About'
 import Projects from '../../pages/Projects'
+import Skills from '../../pages/Skills'
 import {
   Container,
   Collapse,
@@ -31,6 +32,7 @@ export default class NavTop extends React.Component {
 
   componentDidMount () {
     window.addEventListener('resize', this.windowResize)
+    console.log(this.props)
   }
 
   windowResize = () => {
@@ -139,6 +141,16 @@ export default class NavTop extends React.Component {
                   About
                 </Link>
               </NavItem>
+              <NavItem>
+                <Link
+                  className='nav-link'
+                  style={this.style().link}
+                  to='/skills'
+                  onClick={() => this.props.updatePage('Skills')}
+                >
+                  Skills
+                </Link>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
@@ -146,6 +158,7 @@ export default class NavTop extends React.Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
           <Route path='/projects' component={Projects} />
+          <Route path='/skills' component={Skills} />
         
       </Container>
       </Router>

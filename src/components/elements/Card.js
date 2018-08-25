@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Apps from '../../pages/sub-pages/Apps'
+import UIUX from '../../pages/sub-pages/UIUX'
 import {
   Card,
   CardText,
@@ -44,6 +46,7 @@ export default class HomeCard extends Component {
   })
   render () {
     return (
+      <Router>
       <Card style={this.style().card}>
         <CardBody style={this.style().body}>
           <CardTitle style={this.style().title}>
@@ -56,7 +59,12 @@ export default class HomeCard extends Component {
           <Button block style={this.style().button}>← UI / UX Explorations</Button>
           </Link>
         </CardBody>
+        <Route path='/projects/apps' component={Apps} />
+        <Route path='/projects/ui-ux' component={UIUX} />
+
       </Card>
+      
+      </Router>
     )
   }
 }
