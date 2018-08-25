@@ -104,7 +104,7 @@ export default class NavBottom extends Component {
       display: 'flex',
       justifyContent: 'center',
       background:  this.props.page === 'Skills' ? '#fff' : 'transparent',
-      transition: 'all 2s ease'
+      transition: 'all 0.5s ease', 
     },
     link: {
       margin: 15,

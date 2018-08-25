@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Top from './components/containers/Top'
+import Overlay from './pages/Overlay'
 import Bottom from './components/containers/Bottom'
 
 class App extends Component {
@@ -54,6 +55,7 @@ class App extends Component {
     return (
       <div style={this.style().app}>
         <Top backgroundLight={this.state.backgroundLight} updatePage={this.updatePage} toggleOverlay={this.toggleOverlay} />
+        <Overlay toggleOverlay={this.state.toggleOverlay} />
         <Bottom backgroundLight={this.state.backgroundLight} page={this.state.page} />
       </div>
     )
