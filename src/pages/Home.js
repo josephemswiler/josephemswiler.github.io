@@ -26,7 +26,7 @@ export default class Home extends Component {
       <Container style={this.style().container} fluid>
         <Card />
         <div className='star-wrapper' />
-        <div className='star-wrapper'>
+        <div className='star-wrapper live-stars'>
           <div className='star-field-one' />
           <div className='star-field-two' />
           <div className='star-field-three' />

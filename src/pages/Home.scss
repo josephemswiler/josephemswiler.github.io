@@ -32,152 +32,158 @@
 
 .star-wrapper:first-child {
   -webkit-clip-path: circle(20%);
-  clip-path: circle(20%);
+  clip-path: circle(100%);
   background: #333;
   transition: all 2s ease; 
 }
 
 .star-wrapper:last-child {
   -webkit-clip-path: circle(20%);
-  clip-path: circle(20%);
-  background: #333;
-  transition: all 2s ease; 
-}
-
-.star-wrapper:first-child:hover {
-  -webkit-clip-path: polygon(0 0, 0 100vh, 100% 100vh);
   clip-path: circle(100%);
   background: #333;
   transition: all 2s ease; 
 }
 
-.star-wrapper:last-child:hover {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh);
-  clip-path: circle(100%);
+.shrink-star-wrapper {
+  -webkit-clip-path: circle(20%);
+  clip-path: circle(0%);
   background: #333;
   transition: all 2s ease; 
 }
 
-// @function random-color() {
-//   $value: "#000";
-//   @if random(5) == 1 {
-//    $value: "#ff5252";
-//   }
-//   @else if random(5) == 2{
-//     $value: "#34ace0";
-//   }
-//   @else if random(5) == 3{
-//     $value: "#33d9b2";
-//   }
-//   @else if random(5) == 4{
-//     $value: "#ffda79";
-//   }
-//   @else {
-//     $value: "#f7f1e3";
-//   }
-//   @return unquote($value);
+// .star-wrapper:first-child:hover {
+//   -webkit-clip-path: polygon(0 0, 0 100vh, 100% 100vh);
+//   clip-path: circle(100%);
+//   background: #333;
+//   transition: all 2s ease; 
 // }
 
-// // n is number of stars required
-// @function multiple-box-shadow($n) {
-//   $value: "#{random(2000)}px #{random(2000)}px #{random-color()}";
-
-//   @for $i from 2 through $n {
-//     $value: "#{$value} , #{random(2000)}px #{random(2000)}px #{random-color()}";
-//   }
-
-//   @return unquote($value);
+// .star-wrapper:last-child:hover {
+//   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh);
+//   clip-path: circle(100%);
+//   background: #333;
+//   transition: all 2s ease; 
 // }
 
-// $shadows-small: multiple-box-shadow(700);
-// $shadows-medium: multiple-box-shadow(200);
-// $shadows-big: multiple-box-shadow(100);
+@function random-color() {
+  $value: "#000";
+  @if random(5) == 1 {
+   $value: "#ff5252";
+  }
+  @else if random(5) == 2{
+    $value: "#34ace0";
+  }
+  @else if random(5) == 3{
+    $value: "#33d9b2";
+  }
+  @else if random(5) == 4{
+    $value: "#ffda79";
+  }
+  @else {
+    $value: "#f7f1e3";
+  }
+  @return unquote($value);
+}
 
-// .parallax {
-//   #stars1 {
-//     width: 2px;
-//     height: 2px;
-//     border-radius: 50%;
-//     background: transparent;
-//     box-shadow: $shadows-small;
-//     animation: animStar 150s linear infinite;
-  
-//     &:after {
-//       content: " ";
-//       position: absolute;
-//       bottom: 2000px;
-//       width: 2px;
-//       height: 2px;
-//       border-radius: 50%;
-//       background: transparent;
-//       box-shadow: $shadows-small;
-//     }
-//   }
-  
-//   #stars2 {
-//     width: 3px;
-//     height: 3px;
-//     border-radius: 50%;
-//     background: transparent;
-//     box-shadow: $shadows-medium;
-//     animation: animStar 100s linear infinite;
-  
-//     &:after {
-//       content: " ";
-//       position: absolute;
-//       bottom: 2000px;
-//       width: 3px;
-//       height: 3px;
-//       border-radius: 50%;
-//       background: transparent;
-//       box-shadow: $shadows-medium;
-//     }
-//   }
-  
-//   #stars3 {
-//     width: 4px;
-//     height: 4px;
-//     border-radius: 50%;
-//     background: transparent;
-//     box-shadow: $shadows-big;
-//     animation: animStar 50s linear infinite;
-  
-//     &:after {
-//       content: " ";
-//       position: absolute;
-//       bottom: 2000px;
-//       width: 4px;
-//       height: 4px;
-//       border-radius: 50%;
-//       background: transparent;
-//       box-shadow: $shadows-big;
-//     }
-//   }
-  
-//   @keyframes animStar {
-//     from {
-//       transform: translateY(0px);
-//     }
-  
-//     to {
-//       transform: translateY(-2000px);
-//     }
-//   }
-// }
+@function multiple-box-shadow($n) {
+  $value: "#{random(2000)}px #{random(2000)}px #{random-color()}";
 
-// .button:hover {
-// 	  animation: color-me-in 2s ease infinite;
-// 	}
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #{random-color()}";
+  }
 
-// @keyframes color-me-in {
-//   /* You could think of as "step 1" */
-//   0% {
-//    box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
-//   }
-//   50% {
-//      box-shadow: 0 0 1.5em #fff, 0 1.25em 1.5em rgba(#000, .2);
-//   }
-//   100% {
-//    box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
-//   }
-// }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.live-stars {
+  .star-field-one {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: starFloat 150s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 2000px;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: $shadows-small;
+    }
+  }
+  
+  .star-field-two {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    animation: starFloat 100s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 2000px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: $shadows-medium;
+    }
+  }
+  
+  .star-field-three {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-big;
+    animation: starFloat 50s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 2000px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: $shadows-big;
+    }
+  }
+  
+  @keyframes starFloat {
+    from {
+      transform: translateY(0px);
+    }
+  
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+}
+
+.button:hover {
+	  animation: color-me-in 2s ease infinite;
+	}
+
+@keyframes color-me-in {
+  /* You could think of as "step 1" */
+  0% {
+   box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
+  }
+  50% {
+     box-shadow: 0 0 1.5em #fff, 0 1.25em 1.5em rgba(#000, .2);
+  }
+  100% {
+   box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
+  }
+}
