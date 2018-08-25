@@ -19,11 +19,32 @@ export default class NavBottom extends Component {
       width: window.innerWidth,
       mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff',
       mouseLeaveColor: 'rgba(0,0,0,.5)',
+      background: 'transparent',
+      transition: 'all 0s ease'
     }
   }
 
   componentDidMount () {
     window.addEventListener('resize', this.windowResize)
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.backgroundLight !== this.props.backgroundLight) {
+      this.setState({
+        mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff'
+      })
+    }
+    if (prevProps.page !== this.props.page && this.props.page === 'Skills') {
+        this.setState({
+          background: '#fff',
+          transition: 'all 1s ease'
+        })
+    } else if (prevProps.page !== this.props.page) {
+      this.setState({
+        background: 'transparent',
+        transition: 'all 0s ease'
+      })
+    }
   }
 
   windowResize = () => {
@@ -32,18 +53,14 @@ export default class NavBottom extends Component {
     })
   }
 
+  setSkillsBackground = () => {
+    console.log('skills')
+  }
+
   tooltipToggle = () => {
     this.setState({
       tooltipOpen: !this.state.tooltipOpen
     })
-  }
-
-  componentDidUpdate(prevProps) { 
-    if ( prevProps.backgroundLight !== this.props.backgroundLight ) {
-      this.setState({ 
-        mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff'
-      })
-    }
   }
 
   hoverGitHub = event => {
@@ -103,11 +120,11 @@ export default class NavBottom extends Component {
       width: '100%',
       display: 'flex',
       justifyContent: 'center',
-      background:  this.props.page === 'Skills' ? '#fff' : 'transparent',
-      transition: 'all 0.5s ease', 
+      background: this.state.background,
+      transition: this.state.transition
     },
     link: {
-      margin: 15,
+      margin: 15
     },
     gitHub: {
       fontSize: 32,
@@ -133,7 +150,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='https://github.com/josephemswiler'
           target='_blank'
-          rel="noopener noreferrer"
+          rel='noopener noreferrer'
           onMouseEnter={this.hoverGitHub}
           onMouseLeave={this.hoverGitHub}
         >
@@ -147,7 +164,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='https://www.linkedin.com/in/josephemswiler/'
           target='_blank'
-          rel="noopener noreferrer"
+          rel='noopener noreferrer'
           onMouseEnter={this.hoverLinkedIn}
           onMouseLeave={this.hoverLinkedIn}
         >
@@ -160,7 +177,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='mailto:josephemswiler@gmail.com'
           target='_blank'
-          rel="noopener noreferrer"
+          rel='noopener noreferrer'
           onMouseEnter={this.hoverEmail}
           onMouseLeave={this.hoverEmail}
         >

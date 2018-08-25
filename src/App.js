@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   updatePage = page => {
-    console.log(page)
     let pageLight = false
     switch (page) {
       case 'Home':

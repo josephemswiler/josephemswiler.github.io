@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 
 export default class Overlay extends Component {
-
-  handleClick = () => {
-    
-  }
-
   styles = () => ({
     overlay: {
       width: '100%',
