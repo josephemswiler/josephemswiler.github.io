@@ -118,13 +118,21 @@ export default class About extends Component {
       ]
     },
     {
+      title: 'Most Used Gif',
+      listItems: [
+        {
+        src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
+        }
+      ],
+    },
+    {
       title: 'Currently Listening',
       listItems: [
         'Arctic Monkeys 🐵',
         'Foals 🦄',
         'BØRNS',
-        'Dwight Yoakham',
         'Digitalism 🤖',
+        'Dwight Yoakham',
         'Chance the Rapper'
       ]
     },
@@ -134,8 +142,16 @@ export default class About extends Component {
         'Hot Fuzz 🕵',
         'The Man Who Knew Too Little',
         'The Room',
-        'Indiana Jones',
-        'James Bond 🤵'
+        'James Bond 🤵',
+        'Indiana Jones'
+      ]
+    },
+    {
+      title: 'Currently Reading',
+      listItems: [
+        'Ego Is The Enemy',
+        'Lonely Planet Italian Phrasebook 🇮🇹',
+        'Eloquent JavaScript'
       ]
     }
   ]
@@ -190,8 +206,13 @@ export default class About extends Component {
                 <div className='card-body'>
                   <h3 style={this.style().header}>{item.title}</h3>
                   <ul style={this.style().list}>
-                    {item.listItems.map( (listItem, listIdx) => {
-                      return <li key={listIdx} ><h5>{listItem}</h5></li>
+                    {item.listItems.map( (listItem, listIdx, listArr) => {
+                      console.log(typeof listItem[0])
+                      if (typeof listItem[0] === 'string') {
+                        return <li key={listIdx}><h5>{listItem}</h5></li>
+                      } else {
+                        return <li key={listIdx}><img className='list-image' src={listItem.src} alt={`image ${listIdx}`} /></li>
+                      }
                     })}
                   </ul>
                 </div>
