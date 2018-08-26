@@ -125,17 +125,17 @@ export default class NavBottom extends Component {
     gitHub: {
       fontSize: 32,
       color: this.state.gitHubColor,
-      transition: 'all 0.6s'
+      transition: 'all 1s ease'
     },
     linkedIn: {
       fontSize: 32,
       color: this.state.linkedInColor,
-      transition: 'all 0.6s'
+      transition: 'all 1s ease'
     },
     email: {
       fontSize: 32,
       color: this.state.emailColor,
-      transition: 'all 0.6s'
+      transition: 'all 1s ease'
     }
   })
 

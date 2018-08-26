@@ -14,6 +14,7 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { isAbsolute } from 'upath'
 
 library.add(fas)
 
@@ -25,7 +26,8 @@ export default class NavTop extends React.Component {
     this.tooltipToggle = this.tooltipToggle.bind(this)
     this.state = {
       isOpen: false,
-      tooltipOpen: false
+      tooltipOpen: false,
+      closeColor: this.props.backgroundLight ? '#333' : '#fff'
     }
   }
 
@@ -56,11 +58,27 @@ export default class NavTop extends React.Component {
   }
 
   handleDropDownClick = () => {
-      this.setState({
-        isOpen: false
-      })
-      this.props.toggleOverlay()
-      document.removeEventListener('click', this.handleDropDownClick)
+    this.setState({
+      isOpen: false
+    })
+    this.props.toggleOverlay()
+    document.removeEventListener('click', this.handleDropDownClick)
+  }
+
+  hoverClose = event => {
+    switch (event.type) {
+      case 'mouseenter':
+        this.setState({
+          closeColor: '#ff5252'
+        })
+        break
+      case 'mouseleave':
+        this.setState({
+          closeColor: this.props.backgroundLight ? '#333' : '#fff'
+        })
+        break
+      default:
+    }
   }
 
   style = () => ({
@@ -74,6 +92,9 @@ export default class NavTop extends React.Component {
       padding: 0
     },
     navbar: {
+      display: 'flex',
+      alignItems: 'center',
+      height: this.state.isOpen ? '100%' : '',
       justifyContent: 'center',
       alignContent: 'center',
       border: 'none',
@@ -92,13 +113,34 @@ export default class NavTop extends React.Component {
     toggler: {
       fontSize: '20px',
       outline: 'none',
-      color: this.props.backgroundLight ? '#333' : '#fff',
+      color: this.props.backgroundLight ? '#333' : '#fff'
+    },
+    collapse: {
+      background: this.state.isOpen
+        ? this.props.backgroundLight ? '#fff' : '#333'
+        : 'transparent',
+      display: this.state.isOpen ? 'block' : 'none',
+      padding: this.state.isOpen ? 30 : 0,
+      position: 'relative'
+    },
+    mobileNav: {},
+    closeToggle: {
+      display: this.state.isOpen ? 'block' : 'none',
+      position: 'absolute',
+      right: 20,
+      top: 20,
+      fontSize: 24,
+      cursor: 'pointer',
+      color: this.state.closeColor,
+      transition: 'all 1s ease'
     },
     link: {
       fontSize: 16,
       fontWeight: 400,
+      padding: this.state.isOpen ? 30 : 0,
       color: this.props.backgroundLight ? '#333' : '#fff',
-      transition: 'all 1s ease'
+      transition: 'all 1s ease',
+      textAlign: 'center'
     }
   })
 
@@ -107,7 +149,7 @@ export default class NavTop extends React.Component {
   }
 
   render () {
-    let toggleIcon = this.state.isOpen ? 'angle-up' : 'angle-down'
+    let toggleIcon = this.state.isOpen ? '' : 'angle-down'
 
     return (
       <Router>
@@ -132,8 +174,18 @@ export default class NavTop extends React.Component {
             >
               <FontAwesomeIcon icon={['fas', toggleIcon]} />
             </NavbarToggler>
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className='mr-auto' navbar>
+            <Collapse
+              isOpen={this.state.isOpen}
+              navbar
+              style={this.style().collapse}
+            >
+              <FontAwesomeIcon
+                icon={['fas', 'times-circle']}
+                style={this.style().closeToggle}
+                onMouseEnter={this.hoverClose}
+                onMouseLeave={this.hoverClose}
+              />
+              <Nav className='mr-auto' navbar style={this.style().mobileNav}>
                 <NavItem>
                   <Link
                     className='nav-link'
@@ -172,10 +224,10 @@ export default class NavTop extends React.Component {
             path='/projects'
             render={props => <Projects updatePage={this.props.updatePage} />}
           />
-                <Route
+          <Route
             path='/projects/apps'
             render={props => <Projects updatePage={this.props.updatePage} />}
-          />          
+          />
 
         </Container>
       </Router>

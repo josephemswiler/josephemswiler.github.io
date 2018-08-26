@@ -7,7 +7,19 @@ import './About.css'
 export default class About extends Component {
   componentDidMount () {
     this.props.updatePage('About')
+    // this.colorInterval()
   }
+
+  // colorInterval = () => {
+  //   this.interval = setInterval(() => {
+  //     if (this.state.idx >= this.state.projects.length - 1) {
+  //       this.setState({ idx: 0 })
+  //     } else {
+  //       this.setState({ idx: this.state.idx + 1 })
+  //     }
+  //     this.props.updateBackground(this.state.projects[this.state.idx].name)
+  //   }, 3500)
+  // }
 
   style = () => ({
     container: {
@@ -67,19 +79,18 @@ export default class About extends Component {
   })
 
   colors = [
-    '#33d9b2',
-    '#34ace0',
-    '#ffda79',
-    '#ff5252',
-    '#f7f1e3'
+    'rgba(51,217,178,0.5)',
+    'rgba(52,172,224,0.5)',
+    'rgba(255,218,121,0.5)',
+    'rgba(255,82,82,0.5)',
   ]
 
   quickFacts = [
       {
         title: 'Favorite Hobbies',
         listItems: [
-          'Running 🏃',
-          'Cooking',
+          'Running',
+          'Cooking 👨‍🍳',
           'WebVR',
           'More developing',
           'More designing '
@@ -99,7 +110,7 @@ export default class About extends Component {
       {
         title: 'Favorite Breweries',
         listItems: [
-          'Pinthouse Pizza (South) 🙃',
+          'Pinthouse Pizza 🙃',
           'Jester King',
           'St. Elmo',
           'Oddwood',
@@ -167,7 +178,7 @@ export default class About extends Component {
                       <ul style={this.style().list}>
                       {item.listItems.map( listItem => {
                         return (
-                          <li><h2>{listItem}</h2></li>    
+                          <li><h3>{listItem}</h3></li>
                         )
                       })}
                       </ul>
