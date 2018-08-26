@@ -9,7 +9,7 @@ ul {
 
 .list-image {
   width: 100%;
-}
+  border-radius: 0.25rem; }
 
 .arrow-move {
   display: inline-block;
@@ -27,11 +27,7 @@ ul {
 .card-columns {
   column-count: 1; }
 
-@media (min-width: 576px) {
-  .card-columns {
-    column-count: 2; } }
-
-@media (min-width: 768px) {
+@media (min-width: 720px) {
   .card-columns {
     column-count: 2; } }
 
@@ -39,6 +35,6 @@ ul {
   .card-columns {
     column-count: 3; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .card-columns {
     column-count: 4; } }

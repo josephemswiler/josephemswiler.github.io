@@ -9,6 +9,11 @@ ul {
     margin: 0;
 }
 
+.list-image {
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+
 .arrow-move {
     display: inline-block;
     animation: bounceRight 2s ease infinite;
@@ -30,13 +35,7 @@ ul {
     column-count: 1;
 }
 
-@media (min-width: 576px) { 
-    .card-columns {
-        column-count: 2;
-   }
-}
-
-@media (min-width: 768px) { 
+@media (min-width: 720px) { 
     .card-columns {
         column-count: 2;
    }
@@ -48,7 +47,7 @@ ul {
    }
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1400px) { 
     .card-columns {
         column-count: 4;
    }

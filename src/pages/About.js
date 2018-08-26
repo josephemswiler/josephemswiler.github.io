@@ -75,6 +75,9 @@ export default class About extends Component {
     },
     clearFooter: {
       paddingBottom: '5rem'
+    },
+    listCard: {
+      background: '#f7f1e3'
     }
   })
 
@@ -108,22 +111,33 @@ export default class About extends Component {
       ]
     },
     {
+      title: 'Favorite Hikes',
+      listItems: [
+        'Shenandoah National Park',
+        'Multnomah Falls',
+        'Burlington Waterfront 🌲',
+        'Piazzale Michelangelo',
+        'Park Güell 🇪🇸'
+      ]
+    },
+    {
       title: 'Favorite Breweries',
       listItems: [
         'Pinthouse Pizza 🙃',
         'Jester King',
         'St. Elmo',
         'Oddwood 🤷',
-        'Zilker'
+        'Zilker',
+        'Lazarus'
       ]
     },
     {
-      title: 'Most Used Gif',
+      title: 'Favorite Hot Sauce',
       listItems: [
-        {
-        src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
-        }
-      ],
+        'Yellowbird Habanero',
+        'Tacodeli Salsa Doña 💃🏻',
+        `Perry's Pepper Sauce`
+      ]
     },
     {
       title: 'Currently Listening',
@@ -137,6 +151,14 @@ export default class About extends Component {
       ]
     },
     {
+      title: 'Most Used Gif',
+      listItems: [
+        {
+        src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
+        }
+      ],
+    },
+    {
       title: 'Favorite Movies',
       listItems: [
         'Hot Fuzz 🕵',
@@ -147,11 +169,36 @@ export default class About extends Component {
       ]
     },
     {
+      title: 'Favorite Museums',
+      listItems: [
+        'National Air and Space Museum 🚀',
+        'The Blanton Museum of Art',
+        'J. Paul Getty Museum',
+        'National Gallery of Art 👩‍🎨',
+        'Uffizi Gallery',
+        'Louvre Museum 🇫🇷'
+      ]
+    },
+    {
       title: 'Currently Reading',
       listItems: [
         'Ego Is The Enemy',
         'Lonely Planet Italian Phrasebook 🇮🇹',
         'Eloquent JavaScript'
+      ]
+    },
+    {
+      title: 'Favorite Dinosaur',
+      listItems: [
+        'Stegosaurus'
+      ]
+    },
+    {
+      title: 'Favorite Tacos',
+      listItems: [
+        'Al Pastor',
+        'Migas',
+        'Carne Asada Con Crema'
       ]
     }
   ]
@@ -175,7 +222,7 @@ export default class About extends Component {
                 {' '}
                 <div className='arrow-move'>→</div>
               </div>
-              <p className='card-text'>
+              <p className='card-text mt-3'>
                 <small style={{ color: '#aaa' }}>
                   Last updated August 2018
                 </small>
@@ -202,7 +249,7 @@ export default class About extends Component {
           </div>
           {this.quickFacts.map( (item, idx) => {
             return (
-              <div key={idx} style={{ background: '#f7f1e3' }} className='card mb-3'>
+              <div key={idx} style={this.style().listCard} className='card mb-3'>
                 <div className='card-body'>
                   <h3 style={this.style().header}>{item.title}</h3>
                   <ul style={this.style().list}>
