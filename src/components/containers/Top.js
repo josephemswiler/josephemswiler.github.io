@@ -27,17 +27,18 @@ export default class NavTop extends React.Component {
     this.state = {
       isOpen: false,
       tooltipOpen: false,
-      closeColor: this.props.backgroundLight ? '#333' : '#fff'
+      closeColor: this.props.backgroundLight ? '#333' : '#fff',
+      scrolling: false
     }
   }
 
   componentDidMount () {
     window.addEventListener('resize', this.windowResize)
+    window.addEventListener('scroll', this.windowScroll)
   }
 
   componentDidUpdate (prevProps) {
     if (prevProps.backgroundLight !== this.props.backgroundLight) {
-      console.log(this.props.backgroundLight)
       this.setState({
         closeColor: this.props.backgroundLight ? '#333' : '#fff'
       })
@@ -47,6 +48,18 @@ export default class NavTop extends React.Component {
   windowResize = () => {
     if (window.innerWidth >= 768 && this.state.isOpen) {
       this.handleDropDownClick()
+    }
+  }
+
+  windowScroll = () => {
+    if (window.scrollY >= 30) {
+      this.setState({
+        scrolling: true
+      })
+    } else if (window.scrollY <= 30) {
+      this.setState({
+        scrolling: false
+      })
     }
   }
 
@@ -111,13 +124,15 @@ export default class NavTop extends React.Component {
       fontFamily: `'Nunito', sans-serif`,
       color: this.props.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease',
-      fontWeight: 300
+      fontWeight: 300,
+      background: this.state.scrolling ? this.props.backgroundLight ? '#fff' : '#333' : ''
     },
     brand: {
       position: 'absolute',
       top: 0,
       color: this.props.backgroundLight ? '#333' : '#fff',
-      transition: 'all 1s ease'
+      transition: 'all 1s ease',
+      zIndex: 10
     },
     toggler: {
       fontSize: '20px',

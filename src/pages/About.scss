@@ -9,6 +9,23 @@ ul {
     margin: 0;
 }
 
+.arrow-move {
+    display: inline-block;
+    animation: bounceRight 2s ease infinite;
+    color:  #333;
+}
+
+@keyframes bounceRight {
+    0%, 100% {
+        transform: translateX(0px);
+        color:  #333;
+    }
+    50% {
+        transform: translateX(20px);
+        color: #fff;
+    }
+}
+
 .card-columns {
     column-count: 1;
 }
@@ -21,7 +38,7 @@ ul {
 
 @media (min-width: 768px) { 
     .card-columns {
-        column-count: 3;
+        column-count: 2;
    }
 }
 

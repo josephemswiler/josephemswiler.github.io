@@ -11,7 +11,7 @@ export default class About extends Component {
   }
 
   // colorInterval = () => {
-    // let bg =  this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))]
+  // let bg =  this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))]
   //   this.interval = setInterval(() => {
   //     if (this.state.idx >= this.state.projects.length - 1) {
   //       this.setState({ idx: 0 })
@@ -26,14 +26,13 @@ export default class About extends Component {
     container: {
       margin: 0,
       padding: 20,
-      paddingTop: 80,
+      paddingTop: 85,
       maxWidth: '100%',
       height: '100%'
     },
     hello: {
       background: '#333',
-      color: '#fff',
-
+      color: '#fff'
     },
     intro: {
       display: 'flex',
@@ -75,7 +74,7 @@ export default class About extends Component {
       textAlign: 'center'
     },
     clearFooter: {
-      paddingBottom: '5rem',
+      paddingBottom: '5rem'
     }
   })
 
@@ -83,113 +82,123 @@ export default class About extends Component {
     'rgba(51,217,178,0.5)',
     'rgba(52,172,224,0.5)',
     'rgba(255,218,121,0.5)',
-    'rgba(255,82,82,0.5)',
+    'rgba(255,82,82,0.5)'
   ]
 
   quickFacts = [
-      {
-        title: 'Favorite Hobbies',
-        listItems: [
-          'Running',
-          'Cooking 👨‍🍳',
-          'WebVR',
-          'More developing 👨‍💻',
-          'More designing'
-        ]
-      },
-      {
-        title: 'Favorite Restaurants',
-        listItems: [
-          'Sway 🇹🇭',
-          'Terry Black’s BBQ',
-          'Torchy’s Tacos 🌮',
-          'Pacha Organic Café',
-          'Pinthouse Pizza',
-          'Ramen Tatsu-Ya'
-        ]
-      },
-      {
-        title: 'Favorite Breweries',
-        listItems: [
-          'Pinthouse Pizza 🙃',
-          'Jester King',
-          'St. Elmo',
-          'Oddwood 🤷',
-          'Zilker'
-        ]
-      },
-      {
-        title: 'Currently Listening',
-        listItems: [
-          'Arctic Monkeys 🐵',
-          'Foals 🦄',
-          'BØRNS',
-          'Dwight Yoakham',
-          'Digitalism 🤖',
-          'Chance the Rapper'
-        ]
-      }
-    ]
+    {
+      title: 'Favorite Hobbies',
+      listItems: [
+        'Running',
+        'Cooking 👨‍🍳',
+        'WebVR',
+        'More developing 👨‍💻',
+        'More designing'
+      ]
+    },
+    {
+      title: 'Favorite Restaurants',
+      listItems: [
+        'Sway 🇹🇭',
+        'Terry Black’s BBQ',
+        'Torchy’s Tacos 🌮',
+        'Pacha Organic Café',
+        'Pinthouse Pizza',
+        'Ramen Tatsu-Ya'
+      ]
+    },
+    {
+      title: 'Favorite Breweries',
+      listItems: [
+        'Pinthouse Pizza 🙃',
+        'Jester King',
+        'St. Elmo',
+        'Oddwood 🤷',
+        'Zilker'
+      ]
+    },
+    {
+      title: 'Currently Listening',
+      listItems: [
+        'Arctic Monkeys 🐵',
+        'Foals 🦄',
+        'BØRNS',
+        'Dwight Yoakham',
+        'Digitalism 🤖',
+        'Chance the Rapper'
+      ]
+    },
+    {
+      title: 'Favorite Movies',
+      listItems: [
+        'Hot Fuzz 🕵',
+        'The Man Who Knew Too Little',
+        'The Room',
+        'Indiana Jones',
+        'James Bond 🤵'
+      ]
+    }
+  ]
 
   render () {
     return (
       <Container style={this.style().container}>
-        {/* <Row>
-          <Col sm='6'> */}
-<div class="card-columns" style={this.style().clearFooter}>
-            <div className='card mb-3' style={this.style().hello}>
-              <div className='card-body'>
-                <h1 style={this.style().header}>Hello. 👋</h1>
-                <p className='text-justify'>
-                  I'm a full stack developer from <span style={{fontWeight: 900}}>Austin, TX</span> with a proficiency in UI / UX and the skills listed below. You can find me on most platforms <span style={{fontWeight: 900}}>@josephemswiler</span>. Here are some quick facts about me. →
-                </p>
-                <p className='card-text'>
-                  <small style={{color: '#aaa'}}>Last updated August 2018</small>
-                </p>
+        <div className='card-columns' style={this.style().clearFooter}>
+          <div className='card mb-3' style={this.style().hello}>
+            <div className='card-body'>
+              <h1 style={this.style().header}>Hello. 👋</h1>
+              <div className='text-justify'>
+                I'm a full stack developer from
+                {' '}
+                <span style={{ fontWeight: 900 }}>Austin, TX</span>
+                {' '}
+                with a proficiency in UI / UX and the skills listed below. You can find me on most platforms
+                {' '}
+                <span style={{ fontWeight: 900 }}>@josephemswiler</span>
+                . Here are some quick facts about me!
+                {' '}
+                <div className='arrow-move'>→</div>
               </div>
-              <div style={this.style().wrapper}>
-                {api.skills.map((item, idx) => {
-                  return (
-                    <div style={this.style().iconWrapper} key={idx}>
-                      <a href={item.link} target='_blank'>
-                        <img
-                          style={this.style().icon}
-                          src={item.image}
-                          alt='a technology icon'
-                        />
-                      </a>
-                      <span style={this.style().iconLabel}>
-                        {item.name}
-                      </span>
-                    </div>
-                  )
-                })}
-              </div>
+              <p className='card-text'>
+                <small style={{ color: '#aaa' }}>
+                  Last updated August 2018
+                </small>
+              </p>
             </div>
-            
-          {/* </Col>
-          <Col sm='6'>
-             */}
-              {this.quickFacts.map(item => {
-                
+            <div style={this.style().wrapper}>
+              {api.skills.map((item, idx) => {
                 return (
-                  <div style={{background: '#f7f1e3'}} className='card mb-3'>
-                    <div className='card-body'>
-                      <h3 style={this.style().header}>{item.title}</h3>
-                      <ul style={this.style().list}>
-                      {item.listItems.map( listItem => {
-                        return (
-                          <li><h3>{listItem}</h3></li>
-                        )
-                      })}
-                      </ul>
-                    </div>
+                  <div style={this.style().iconWrapper} key={idx}>
+                    <a href={item.link} target='_blank'>
+                      <img
+                        style={this.style().icon}
+                        src={item.image}
+                        alt='a technology icon'
+                      />
+                    </a>
+                    <span style={this.style().iconLabel}>
+                      {item.name}
+                    </span>
                   </div>
                 )
               })}
+            </div>
+          </div>
+          {this.quickFacts.map( (item, idx) => {
+            return (
+              <div key={idx} style={{ background: '#f7f1e3' }} className='card mb-3'>
+                <div className='card-body'>
+                  <h3 style={this.style().header}>{item.title}</h3>
+                  <ul style={this.style().list}>
+                    {item.listItems.map( (listItem, listIdx) => {
+                      return <li key={listIdx} ><h5>{listItem}</h5></li>
+                    })}
+                  </ul>
+                </div>
               </div>
-          {/* </Col>
-        </Row> */}
+            )
+          })}
+        </div>
       </Container>
     )
   }
