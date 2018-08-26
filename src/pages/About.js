@@ -93,16 +93,16 @@ export default class About extends Component {
           'Running',
           'Cooking 👨‍🍳',
           'WebVR',
-          'More developing',
-          'More designing '
+          'More developing 👨‍💻',
+          'More designing'
         ]
       },
       {
         title: 'Favorite Restaurants',
         listItems: [
-          'Sway',
+          'Sway 🇹🇭',
           'Terry Black’s BBQ',
-          'Torchy’s Tacos',
+          'Torchy’s Tacos 🌮',
           'Pacha Organic Café',
           'Pinthouse Pizza',
           'Ramen Tatsu-Ya'
@@ -114,18 +114,18 @@ export default class About extends Component {
           'Pinthouse Pizza 🙃',
           'Jester King',
           'St. Elmo',
-          'Oddwood',
+          'Oddwood 🤷',
           'Zilker'
         ]
       },
       {
         title: 'Currently Listening',
         listItems: [
-          'Arctic Monkeys',
-          'Foals',
+          'Arctic Monkeys 🐵',
+          'Foals 🦄',
           'BØRNS',
           'Dwight Yoakham',
-          'Digitalism',
+          'Digitalism 🤖',
           'Chance the Rapper'
         ]
       }
