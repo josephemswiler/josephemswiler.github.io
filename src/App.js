@@ -18,9 +18,9 @@ class App extends Component {
     let pageLight = false
     switch (page) {
       case 'Home':
-      case 'About':
-      break
       case 'Projects':
+      break
+      case 'About':
       case 'Skills':
       pageLight = true
       break

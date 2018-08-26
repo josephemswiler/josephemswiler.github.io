@@ -145,5 +145,27 @@ export default {
       image: 'https://i.imgur.com/g1MmsEp.png',
       link: 'https://threejs.org/'
     }
+  ],
+  projects: [
+    {
+      src: 'https://i.imgur.com/rb90vz8.png',
+      altText: 'An app',
+      caption: 'Found'
+    },
+    {
+      src: 'https://i.imgur.com/XWtoysn.png',
+      altText: 'alt texxxxxt',
+      caption: 'Dutch'
+    },
+    {
+      src: 'https://i.imgur.com/UtFA1Ev.png',
+      altText: 'Slide 3',
+      caption: 'Spacebnb'
+    },
+    {
+      src: 'https://i.imgur.com/yQSxnOg.jpg',
+      altText: 'Slide 3',
+      caption: 'Jello'
+    },
   ]
 }
