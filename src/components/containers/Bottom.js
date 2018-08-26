@@ -34,7 +34,7 @@ export default class NavBottom extends Component {
         mouseEnterColor: this.props.backgroundLight ? '#333' : '#fff'
       })
     }
-    if (prevProps.page !== this.props.page && this.props.page === 'Skills') {
+    if (prevProps.page !== this.props.page && this.props.page === 'About') {
         this.setState({
           background: '#fff',
           transition: 'all 1s ease'
@@ -51,10 +51,6 @@ export default class NavBottom extends Component {
     this.setState({
       width: window.innerWidth
     })
-  }
-
-  setSkillsBackground = () => {
-    console.log('skills')
   }
 
   tooltipToggle = () => {
@@ -113,7 +109,7 @@ export default class NavBottom extends Component {
 
   style = () => ({
     container: {
-      position: this.props.page === 'Skills' ? 'fixed' : 'absolute',
+      position: this.props.page === 'About' ? 'fixed' : 'absolute',
       bottom: 0,
       paddingBottom: '.25rem',
       paddingTop: '.25rem',
