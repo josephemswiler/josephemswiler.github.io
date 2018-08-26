@@ -14,6 +14,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.updatePage(window.location.pathname.split('/')[1].charAt(0).toUpperCase().concat(window.location.pathname.split('/')[1].slice(1)))
+  }
+
   updatePage = page => {
     let pageLight = false
     switch (page) {

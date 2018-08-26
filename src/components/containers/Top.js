@@ -35,6 +35,15 @@ export default class NavTop extends React.Component {
     window.addEventListener('resize', this.windowResize)
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.backgroundLight !== this.props.backgroundLight) {
+      console.log(this.props.backgroundLight)
+      this.setState({
+        closeColor: this.props.backgroundLight ? '#333' : '#fff'
+      })
+    }
+  }
+
   windowResize = () => {
     if (window.innerWidth >= 768 && this.state.isOpen) {
       this.handleDropDownClick()
@@ -113,7 +122,7 @@ export default class NavTop extends React.Component {
     toggler: {
       fontSize: '20px',
       outline: 'none',
-      color: this.props.backgroundLight ? '#333' : '#fff'
+      color: this.state.closeColor
     },
     collapse: {
       background: this.state.isOpen
@@ -137,7 +146,7 @@ export default class NavTop extends React.Component {
     link: {
       fontSize: 16,
       fontWeight: 400,
-      padding: this.state.isOpen ? 30 : 0,
+      padding: this.state.isOpen ? 30 : '',
       color: this.props.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease',
       textAlign: 'center'
@@ -149,7 +158,7 @@ export default class NavTop extends React.Component {
   }
 
   render () {
-    let toggleIcon = this.state.isOpen ? '' : 'angle-down'
+    let toggleIcon = this.state.isOpen ? 'angle-up' : 'chevron-circle-down'
 
     return (
       <Router>
@@ -172,7 +181,8 @@ export default class NavTop extends React.Component {
               className='mr-auto border-0'
               onClick={this.toggle}
             >
-              <FontAwesomeIcon icon={['fas', toggleIcon]} />
+              <FontAwesomeIcon icon={['fas', toggleIcon]} onMouseEnter={this.hoverClose}
+                onMouseLeave={this.hoverClose} />
             </NavbarToggler>
             <Collapse
               isOpen={this.state.isOpen}

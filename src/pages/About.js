@@ -11,6 +11,7 @@ export default class About extends Component {
   }
 
   // colorInterval = () => {
+    // let bg =  this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))]
   //   this.interval = setInterval(() => {
   //     if (this.state.idx >= this.state.projects.length - 1) {
   //       this.setState({ idx: 0 })
@@ -133,20 +134,19 @@ export default class About extends Component {
   render () {
     return (
       <Container style={this.style().container}>
-        <Row>
-          <Col sm='6'>
+        {/* <Row>
+          <Col sm='6'> */}
+<div class="card-columns" style={this.style().clearFooter}>
             <div className='card mb-3' style={this.style().hello}>
               <div className='card-body'>
-                <h1 style={this.style().header}>Hello.</h1>
+                <h1 style={this.style().header}>Hello. 👋</h1>
                 <p className='text-justify'>
-                  I'm a full stack developer with a proficiency in UI / UX, jQuery, and advanced front-end Javascript (React.js, Next.js, Three.js). I have experience with NoSQL and SQL databases and development and consumption of RESTful APIs. Here are some quick facts about me. : )
+                  I'm a full stack developer from <span style={{fontWeight: 900}}>Austin, TX</span> with a proficiency in UI / UX and the skills listed below. You can find me on most platforms <span style={{fontWeight: 900}}>@josephemswiler</span>. Here are some quick facts about me. →
                 </p>
                 <p className='card-text'>
-                  <small>Last updated August 2018</small>
+                  <small style={{color: '#aaa'}}>Last updated August 2018</small>
                 </p>
               </div>
-            </div>
-            <div className='card mb-0'>
               <div style={this.style().wrapper}>
                 {api.skills.map((item, idx) => {
                   return (
@@ -166,13 +166,14 @@ export default class About extends Component {
                 })}
               </div>
             </div>
-          </Col>
+            
+          {/* </Col>
           <Col sm='6'>
-            <div class="card-columns" style={this.style().clearFooter}>
+             */}
               {this.quickFacts.map(item => {
-                let bg =  this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))]
+                
                 return (
-                  <div style={{background: bg}} className='card mb-3'>
+                  <div style={{background: '#f7f1e3'}} className='card mb-3'>
                     <div className='card-body'>
                       <h3 style={this.style().header}>{item.title}</h3>
                       <ul style={this.style().list}>
@@ -187,8 +188,8 @@ export default class About extends Component {
                 )
               })}
               </div>
-          </Col>
-        </Row>
+          {/* </Col>
+        </Row> */}
       </Container>
     )
   }
