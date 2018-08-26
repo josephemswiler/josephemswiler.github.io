@@ -21,7 +21,6 @@ class App extends Component {
       case 'Projects':
       break
       case 'About':
-      case 'Skills':
       pageLight = true
       break
       default:

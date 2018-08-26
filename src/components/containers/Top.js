@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from '../../pages/Home'
 import About from '../../pages/About'
 import Projects from '../../pages/Projects'
-import Skills from '../../pages/Skills'
 import {
   Container,
   Collapse,
@@ -155,16 +154,6 @@ export default class NavTop extends React.Component {
                     About
                   </Link>
                 </NavItem>
-                <NavItem>
-                  <Link
-                    className='nav-link'
-                    style={this.style().link}
-                    to='/skills'
-                    onClick={() => this.props.updatePage('Skills')}
-                  >
-                    Skills
-                  </Link>
-                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
@@ -186,12 +175,7 @@ export default class NavTop extends React.Component {
                 <Route
             path='/projects/apps'
             render={props => <Projects updatePage={this.props.updatePage} />}
-          />
-          <Route
-            path='/skills'
-            render={props => <Skills updatePage={this.props.updatePage} />}
-          />
-          
+          />          
 
         </Container>
       </Router>

@@ -12,8 +12,6 @@ import {
 import './ProjectSlides.css'
 import { relative } from 'path'
 
-
-
 const items = [
   {
     src: 'https://i.imgur.com/rb90vz8.png',
@@ -94,7 +92,7 @@ class ProjectSlides extends Component {
       width: '100%',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     }
   })
 
@@ -126,7 +124,7 @@ class ProjectSlides extends Component {
                   </CarouselItem>
                 )
               })}
-           <CarouselControl
+              <CarouselControl
                 direction='prev'
                 directionText='Previous'
                 onClickHandler={this.previous}
@@ -141,13 +139,13 @@ class ProjectSlides extends Component {
         </Row>
         <Row>
           <Col>
-          <h1 className='pt-3' style={this.style().name}>{items[activeIndex].name}</h1>
+            <h1 className='pt-3' style={this.style().name}>
+              {items[activeIndex].name}
+            </h1>
           </Col>
-          </Row>
-        <Row> 
+        </Row>
+        <Row>
           <Col className='p-3' style={this.style().column}>
-          
-      
             <CarouselIndicators
               items={items}
               activeIndex={activeIndex}
