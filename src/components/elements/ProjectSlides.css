@@ -10,5 +10,13 @@
   position: relative;
   bottom: 0px; }
 
+.project-name {
+  font-weight: 900;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem; }
+  .project-name h3, .project-name p {
+    margin: 0; }
+
 ol, ul, dl {
   margin-bottom: 0px; }

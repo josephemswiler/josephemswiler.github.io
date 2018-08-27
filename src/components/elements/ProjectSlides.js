@@ -10,7 +10,10 @@ import {
   Col
 } from 'reactstrap'
 import './ProjectSlides.css'
-import { relative } from 'path'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fab)
 
 const items = [
   {
@@ -93,6 +96,9 @@ class ProjectSlides extends Component {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
+    },
+    icon: {
+      fontSize: 32
     }
   })
 
@@ -121,6 +127,23 @@ class ProjectSlides extends Component {
                       alt={item.altText}
                       onClick={() => console.log(item.name)}
                     />
+                    <CarouselCaption
+                      captionText={[
+                        item.name,
+                        <span className='captionIcons'>
+                          {' '}
+                          <FontAwesomeIcon
+                            style={this.style().icon}
+                            icon={['fab', 'github']}
+                          />
+                          <FontAwesomeIcon
+                            style={this.style().icon}
+                            icon={['fas', 'external-link-square-alt']}
+                          />
+                        </span>
+                      ]}
+                      className='project-name'
+                    />
                   </CarouselItem>
                 )
               })}
@@ -140,7 +163,16 @@ class ProjectSlides extends Component {
         <Row>
           <Col>
             <h1 className='pt-3' style={this.style().name}>
-              {items[activeIndex].name}
+              {/* {items[activeIndex].name}
+              <FontAwesomeIcon
+                style={this.style().icon}
+                icon={['fab', 'github']}
+              />
+              <FontAwesomeIcon
+                style={this.style().icon}
+                icon={['fas', 'external-link-square-alt']}
+              /> */}
+
             </h1>
           </Col>
         </Row>
