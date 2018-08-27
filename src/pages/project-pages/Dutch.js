@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Container } from 'reactstrap'
 
 export default class Dutch extends Component {
-  render() {
+  style = () => ({
+    container: {
+      background: `radial-gradient(circle, #ff5252, #cd476f, #8f4772, #57415c, #333333)`,
+      height: '100%',
+      width: '100%'
+    }
+  })
+
+  render () {
     return (
-      <div className="dutch">
+      <Container style={this.style().container} className='rounded'>
         Dutch
-      </div>
+      </Container>
     )
   }
 }

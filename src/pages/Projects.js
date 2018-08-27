@@ -72,6 +72,11 @@ class Projects extends Component {
       dropdownOpen: false
     }
   }
+
+  componentDidMount () {
+    this.props.updatePage('Projects')
+  }
+
   toggle () {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
@@ -87,24 +92,39 @@ class Projects extends Component {
       height: '100%',
       width: '100%',
       margin: 0,
-      padding: 0,
+      padding: 0
     },
     buttonDropDown: {
       marginTop: 85
     },
     project: {
       height: '100%',
-      width: '100%',
+      width: '100%'
+    },
+    slide: {
+      padding: 15,
+      minHeight: 100,
+      minWidth: 100,
+      color: '#fff'
     },
     button: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       width: '200px',
       borderRadius: '1.5px',
-      // zIndex: 1001
+      padding: 20
     },
     dropDown: {
       width: '200px',
       background: 'rgba(255,255,255,0.8)',
       borderRadius: 0
+    },
+    swipe: {
+      width: '100%',
+      height: '100%',
+      marginBottom: 72
     }
   })
 
@@ -112,12 +132,19 @@ class Projects extends Component {
     return (
       <Router>
         <Container style={this.style().container}>
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} style={this.style().buttonDropDown}>
+          <ButtonDropdown
+            isOpen={this.state.dropdownOpen}
+            toggle={this.toggle}
+            style={this.style().buttonDropDown}
+          >
             <DropdownToggle style={this.style().button}>
-              Featured Projects
+              <span className='mt-1'>Featured Projects</span>
             </DropdownToggle>
-            <DropdownMenu style={this.style().dropDown} className='rounded-bottom'>
-              <Link className='link' to='/projects/spacebnb'>
+            <DropdownMenu
+              style={this.style().dropDown}
+              className='rounded-bottom'
+            >
+              <Link to='/projects/spacebnb'>
                 <DropdownItem>
                   Spacebnb
                 </DropdownItem>
@@ -145,18 +172,29 @@ class Projects extends Component {
             </DropdownMenu>
           </ButtonDropdown>
 
-          <SwipeableRoutes>
-            <Route
-              path='/projects/spacebnb'
-              render={props => (
-                <Spacebnb key='spacebnb' updatePage={this.props.updatePage} />
-              )}
-            />
-            <Route path='/projects/jello' component={BlueView} />
-            <Route path='/projects/found' component={GreenView} />
-            <Route path='/projects/dutch' component={YellowView} />
-            <Route path='/projects/events' component={GreenView} />
-          </SwipeableRoutes>
+          <Container style={this.style().swipe} className='mt-3 text-center'>
+          <p><span className='swiping' role='img' aria-label='swipe'><i>👆</i></span></p><p>Swipe to browse, or use the drop down above.</p>
+            <SwipeableRoutes enableMouseEvents>
+              <Route
+                path='/projects/spacebnb'
+                render={props => (
+                  <Spacebnb key='spacebnb' updatePage={this.props.updatePage} />
+                )}
+              />
+              <Route path='/projects/jello' render={props => (
+                  <Jello key='jello' updatePage={this.props.updatePage} />
+                )} />
+              <Route path='/projects/found' render={props => (
+                  <Found key='found' updatePage={this.props.updatePage} />
+                )} />
+              <Route path='/projects/dutch' render={props => (
+                  <Dutch key='dutch' updatePage={this.props.updatePage} />
+                )} />
+              <Route path='/projects/events' render={props => (
+                  <Events key='events' updatePage={this.props.updatePage} />
+                )} />
+            </SwipeableRoutes>
+          </Container>
         </Container>
       </Router>
     )

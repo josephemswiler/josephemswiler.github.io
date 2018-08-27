@@ -2,7 +2,83 @@
     // top: -26px !important;
     // padding-top: 32px;
 
-    button, button:hover, button:focus {
-        text-decoration: 'none'
+    a, a:hover, a:focus {
+        text-decoration: none
     }
+}
+
+
+$width: 50px;
+
+.swiping{
+	margin: 50px;
+    position: relative;
+    width: 100px;
+    i{
+        position: absolute;
+        display: inline-block;
+        color: red;
+        border-radius: 100%;
+        font-family: FontAwesome;
+        animation: hint-finger ease 2s;
+        animation-iteration-count: infinite;
+        z-index: 100;
+        font-size: 20px;
+        
+    }
+    &:before{
+            position: absolute;
+            content: ' ';
+            background: linear-gradient(to right, #33d9b2, #00adb4, #347f99, #465567, #333333);
+            right: -34px;
+            top: 0;
+            width: 0;
+            height: 10px;
+            animation: hint-dot ease 2s;
+            animation-iteration-count: infinite;
+        }
+}
+
+@keyframes hint-finger{
+	0% {
+		right: -$width;
+		transform: scale(1);
+	}
+	20% {
+		right: -$width;
+		transform: scale(.7);
+	}
+	50% {
+		right: $width;
+		transform: scale(.7);
+	}
+	60% {
+		transform: scale(1);
+	}
+	70% {
+		right: $width;
+	}
+	100% {
+		right: -$width;
+		transform: scale(1);
+	}
+}
+
+@keyframes hint-dot{
+	20% {
+		opacity: 0;
+		width: 0;
+	}
+	50% {
+		opacity: .7;
+		width: $width * 2;
+	}
+	60% {
+		opacity: 0;
+		width: $width * 2;
+	}
+	100% {
+		opacity: 0;
+		width: 0;
+	}
 }

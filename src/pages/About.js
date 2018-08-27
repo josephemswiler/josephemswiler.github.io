@@ -6,20 +6,7 @@ import './About.css'
 export default class About extends Component {
   componentDidMount () {
     this.props.updatePage('About')
-    // this.colorInterval()
   }
-
-  // colorInterval = () => {
-  // let bg =  this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))]
-  //   this.interval = setInterval(() => {
-  //     if (this.state.idx >= this.state.projects.length - 1) {
-  //       this.setState({ idx: 0 })
-  //     } else {
-  //       this.setState({ idx: this.state.idx + 1 })
-  //     }
-  //     this.props.updateBackground(this.state.projects[this.state.idx].name)
-  //   }, 3500)
-  // }
 
   style = () => ({
     container: {
@@ -76,7 +63,9 @@ export default class About extends Component {
       paddingBottom: '5rem'
     },
     listCard: {
-      background: this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))],
+      background: this.colors[
+        Math.floor(Math.random() * Math.floor(this.colors.length))
+      ],
       transition: 'all 2s ease'
     }
   })
@@ -94,7 +83,9 @@ export default class About extends Component {
         <div className='card-columns' style={this.style().clearFooter}>
           <div className='card mb-3' style={this.style().hello}>
             <div className='card-body'>
-              <h1 style={this.style().header}>Hello. <span role='img' aria-label='wave'>👋</span></h1>
+              <h1 style={this.style().header}>
+                Hello. <span role='img' aria-label='wave'>👋</span>
+              </h1>
               <div className='text-justify'>
                 I'm a full stack developer from
                 {' '}
@@ -132,17 +123,29 @@ export default class About extends Component {
               })}
             </div>
           </div>
-          {api.quickFacts.map( (item, idx) => {
+          {api.quickFacts.map((item, idx) => {
             return (
-              <div key={idx} style={this.style().listCard} className='card mb-3'>
+              <div
+                key={idx}
+                style={this.style().listCard}
+                className='card mb-3'
+              >
                 <div className='card-body'>
                   <h3 style={this.style().header}>{item.title}</h3>
                   <ul style={this.style().list}>
-                    {item.listItems.map( (listItem, listIdx, listArr) => {
+                    {item.listItems.map((listItem, listIdx, listArr) => {
                       if (typeof listItem[0] === 'string') {
                         return <li key={listIdx}><h5>{listItem}</h5></li>
                       } else {
-                        return <li key={listIdx}><img className='list-image' src={listItem.src} alt={`${listIdx} quick facts`} /></li>
+                        return (
+                          <li key={listIdx}>
+                            <img
+                              className='list-image'
+                              src={listItem.src}
+                              alt={`${listIdx} quick facts`}
+                            />
+                          </li>
+                        )
                       }
                     })}
                   </ul>
