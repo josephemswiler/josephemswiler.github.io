@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Top from './components/containers/Top'
 import Overlay from './pages/Overlay'
 import Bottom from './components/containers/Bottom'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
   constructor (props) {
@@ -56,13 +55,11 @@ class App extends Component {
   })
   render () {
     return (
-      <Router>
       <div style={this.style().app}>
         <Top backgroundLight={this.state.backgroundLight} page={this.state.page} updatePage={this.updatePage} toggleOverlay={this.toggleOverlay} />
         <Overlay toggleOverlay={this.state.toggleOverlay} />
         <Bottom backgroundLight={this.state.backgroundLight} page={this.state.page} />
       </div>
-      </Router>
     )
   }
 }

@@ -67,11 +67,10 @@ export default class ProjectSlide extends Component {
       paddingBottom: 20
     },
     name: {
-      fontWeight: 900
+      fontWeight: 900,
     },
     icon: {
-      margin: 10,
-      fontSize: '2rem',
+      marginLeft: 10,
       color: this.props.project.color
     },
     description: {
@@ -105,7 +104,7 @@ export default class ProjectSlide extends Component {
           >
             <h1 style={this.style().name}>
               {this.props.project.name}
-            </h1>
+            
             <a
               href={
                 this.props.project.github !== 'Modal'
@@ -134,8 +133,9 @@ export default class ProjectSlide extends Component {
                 icon={['fas', 'external-link-square-alt']}
               />
             </a>
+            </h1>
           </Col>
-          <p className='mt-3' style={this.style().description}>
+          <p className='mt-3 d-none d-md-block' style={this.style().description}>
             {this.props.project.description}
           </p>
         </Row>

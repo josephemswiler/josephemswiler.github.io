@@ -1,38 +1,3 @@
-// import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// import { Container } from 'reactstrap'
-// import Apps from '../pages/sub-pages/Apps'
-// import ProjectSlides from '../components/elements/ProjectSlides'
-
-// export default class Projects extends Component {
-//   componentDidMount () {
-//     this.props.updatePage('Projects')
-//   }
-
-//   style = () => ({
-//     container: {
-//       display: 'flex',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//       height: '100%',
-//       width: '100%',
-//       margin: 0,
-//       padding: 0
-//     }
-//   })
-
-//   render () {
-//     return (
-//       <Container style={this.style().container} fluid>
-//         <ProjectSlides />
-//         <Router>
-//           <Route path='/apps' component={Apps} />
-//         </Router>
-//       </Container>
-//     )
-//   }
-// }
-
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import SwipeableRoutes from 'react-swipeable-routes'
@@ -46,26 +11,8 @@ import {
 import './Projects.css'
 import ProjectSlide from './ProjectSlide'
 import api from '../utils/api'
-import Spacebnb from './project-pages/Spacebnb'
-import Jello from './project-pages/Jello'
-import Found from './project-pages/Found'
-import Dutch from './project-pages/Dutch'
-import Events from './project-pages/Events'
 
-const RedView = () => (
-  <div style={{ height: 300, backgroundColor: 'red' }}>Red</div>
-)
-const BlueView = () => (
-  <div style={{ height: 300, backgroundColor: 'blue' }}>Blue</div>
-)
-const GreenView = () => (
-  <div style={{ height: 300, backgroundColor: 'green' }}>Green</div>
-)
-const YellowView = () => (
-  <div style={{ height: 300, backgroundColor: 'yellow' }}>Yellow</div>
-)
-
-class Projects extends Component {
+export default class Projects extends Component {
   constructor (props) {
     super(props)
 
@@ -128,7 +75,7 @@ class Projects extends Component {
       width: '100%',
       height: '100%',
       overflow: 'hidden',
-      justifyContent: 'center',
+      justifyContent: 'center'
     }
   })
 
@@ -208,5 +155,3 @@ class Projects extends Component {
     )
   }
 }
-
-export default Projects
