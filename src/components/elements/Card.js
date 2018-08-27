@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Route, Link } from 'react-router-dom'
 import { Card, CardBody, CardTitle, Button } from 'reactstrap'
 import Projects from '../../pages/Projects'
 import './Card.css'
@@ -38,27 +38,29 @@ export default class HomeCard extends Component {
   })
   render () {
     return (
-      <Router>
-        <Card style={this.style().card}>
-          <CardBody style={this.style().body}>
-            <CardTitle style={this.style().title}>
-              Full Stack Web & Mobile Developer
-            </CardTitle>
-            {/* <Link to='/projects' style={this.style().link}>
-              <Button block style={this.style().button} className='button-text'>
-                Web & Mobile Applications →
-              </Button>
-            </Link> */}
-          </CardBody>
-     
-          {/* <Route
-          exact
-            path='/projects'
-            render={props => <Projects updatePage={this.props.updatePage} />}
-          /> */}
-        </Card>
+      <Card style={this.style().card}>
+        <CardBody style={this.style().body}>
+          <CardTitle style={this.style().title}>
+            Full Stack Web & Mobile Developer
+          </CardTitle>
+          <Link to='/projects' style={this.style().link}>
+            <Button
+              block
+              style={this.style().button}
+              className='button-text'
+              onClick={() => this.props.updatePage('Projects')}
+            >
+              Web & Mobile Applications →
+            </Button>
+          </Link>
+        </CardBody>
 
-      </Router>
+        <Route
+          exact
+          path='/projects'
+          render={props => <Projects updatePage={this.props.updatePage} />}
+        />
+      </Card>
     )
   }
 }

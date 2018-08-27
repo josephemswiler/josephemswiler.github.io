@@ -4,11 +4,10 @@ import Card from '../components/elements/Card'
 import './Home.css'
 
 export default class Home extends Component {
-
-  componentDidMount() {
+  componentDidMount () {
     this.props.updatePage('Home')
   }
-  
+
   style = () => ({
     container: {
       display: 'flex',
@@ -23,7 +22,6 @@ export default class Home extends Component {
   })
 
   render () {
-
     return (
       <Container style={this.style().container} fluid>
         <Card updatePage={this.props.updatePage} />
@@ -33,12 +31,6 @@ export default class Home extends Component {
           <div className='star-field-two' />
           <div className='star-field-three' />
         </div>
-        {/* <a href='#1' />
-        <a href='#2' className='parallax'>
-          <div id='stars1' />
-          <div id='stars2' />
-          <div id='stars3' />
-        </a> */}
       </Container>
     )
   }

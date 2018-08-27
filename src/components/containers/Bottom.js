@@ -109,7 +109,7 @@ export default class NavBottom extends Component {
 
   style = () => ({
     container: {
-      position: this.props.page === 'About' ? 'fixed' : 'absolute',
+      position: this.props.page === 'Home' ? 'absolute' : 'fixed',
       bottom: 0,
       paddingBottom: '.25rem',
       paddingTop: '.25rem',

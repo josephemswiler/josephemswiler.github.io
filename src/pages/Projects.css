@@ -1,5 +1,2 @@
-.dropdown-menu {
-  top: -26px !important;
-  padding-top: 32px; }
-  .dropdown-menu button, .dropdown-menu button:hover, .dropdown-menu button:focus {
-    text-decoration: 'none'; }
+.dropdown-menu button, .dropdown-menu button:hover, .dropdown-menu button:focus {
+  text-decoration: 'none'; }

@@ -40,7 +40,8 @@ import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Container
 } from 'reactstrap'
 import './Projects.css'
 import Spacebnb from './project-pages/Spacebnb'
@@ -78,27 +79,44 @@ class Projects extends Component {
   }
 
   style = () => ({
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      height: '100%',
+      width: '100%',
+      margin: 0,
+      padding: 0,
+    },
+    buttonDropDown: {
+      marginTop: 85
+    },
+    project: {
+      height: '100%',
+      width: '100%',
+    },
     button: {
       width: '200px',
-      borderRadius: 40,
-      zIndex: 1001
+      borderRadius: '1.5px',
+      // zIndex: 1001
     },
     dropDown: {
       width: '200px',
       background: 'rgba(255,255,255,0.8)',
-      top: '-26px'
+      borderRadius: 0
     }
   })
 
   render () {
     return (
       <Router>
-        <div>
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <Container style={this.style().container}>
+          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} style={this.style().buttonDropDown}>
             <DropdownToggle style={this.style().button}>
               Featured Projects
             </DropdownToggle>
-            <DropdownMenu style={this.style().dropDown}>
+            <DropdownMenu style={this.style().dropDown} className='rounded-bottom'>
               <Link className='link' to='/projects/spacebnb'>
                 <DropdownItem>
                   Spacebnb
@@ -139,7 +157,7 @@ class Projects extends Component {
             <Route path='/projects/dutch' component={YellowView} />
             <Route path='/projects/events' component={GreenView} />
           </SwipeableRoutes>
-        </div>
+        </Container>
       </Router>
     )
   }
