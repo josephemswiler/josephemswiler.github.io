@@ -35,7 +35,7 @@ export default class Modal extends Component {
           <ModalFooter>
             <Button color='primary' onClick={this.toggle}>Awesome</Button>
             {' '}
-            <Button color='secondary' onClick={this.toggle}>Cancel</Button>
+            {/* <Button color='secondary' onClick={this.toggle}>Cancel</Button> */}
           </ModalFooter>
         </Modal>
       </div>

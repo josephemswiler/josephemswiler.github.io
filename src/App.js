@@ -4,7 +4,7 @@ import Overlay from './pages/Overlay'
 import Bottom from './components/containers/Bottom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-class App extends Component {
+export default class App extends Component {
   constructor (props) {
     super (props) 
 
@@ -66,5 +66,3 @@ class App extends Component {
     )
   }
 }
-
-export default App
