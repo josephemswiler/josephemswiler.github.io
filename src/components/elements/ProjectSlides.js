@@ -4,7 +4,6 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
   Container,
   Row,
   Col
@@ -42,7 +41,7 @@ const items = [
   },
   {
     name: 'Events',
-    src: 'https://i.imgur.com/XWtoysn.png',
+    src: '',
     link: 'Modal',
     github: 'Modal'
   }

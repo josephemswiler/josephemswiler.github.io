@@ -66,14 +66,14 @@ export default {
       link: 'https://reactjs.org/docs/introducing-jsx.html'
     },
     {
-      name: 'jQuery UI',
-      image: 'https://i.imgur.com/5bkfOiV.png',
-      link: 'https://jqueryui.com/'
-    },
-    {
       name: 'jQuery',
       image: 'https://i.imgur.com/0ZgTtPO.png',
       link: 'https://jquery.com/'
+    },
+    {
+      name: 'jQuery UI',
+      image: 'https://i.imgur.com/5bkfOiV.png',
+      link: 'https://jqueryui.com/'
     },
     {
       name: 'Materialize CSS',
@@ -111,14 +111,14 @@ export default {
       link: 'https://nodejs.org/en/'
     },
     {
-      name: 'React.js',
-      image: 'https://i.imgur.com/3TAsUHD.png',
-      link: 'https://reactjs.org/'
-    },
-    {
       name: 'React Native',
       image: 'https://i.imgur.com/2hFIiay.png',
       link: 'https://facebook.github.io/react-native/'
+    },
+    {
+      name: 'React.js',
+      image: 'https://i.imgur.com/3TAsUHD.png',
+      link: 'https://reactjs.org/'
     },
     {
       name: 'Reactstrap',

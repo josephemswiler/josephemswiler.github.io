@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Apps from '../../pages/sub-pages/Apps'
-import UIUX from '../../pages/sub-pages/UIUX'
 import { Card, CardBody, CardTitle, Button } from 'reactstrap'
+import Projects from '../../pages/Projects'
 import './Card.css'
 
 export default class HomeCard extends Component {
@@ -45,19 +44,18 @@ export default class HomeCard extends Component {
             <CardTitle style={this.style().title}>
               Full Stack Web & Mobile Developer
             </CardTitle>
-            <Link to='/projects/apps' style={this.style().link}>
+            {/* <Link to='/projects' style={this.style().link}>
               <Button block style={this.style().button} className='button-text'>
                 Web & Mobile Applications →
               </Button>
-            </Link>
-            <Link to='/projects/ui-ux' style={this.style().link}>
-              <Button block style={this.style().button} className='button-text'>
-                ← UI / UX Explorations
-              </Button>
-            </Link>
+            </Link> */}
           </CardBody>
      
-
+          {/* <Route
+          exact
+            path='/projects'
+            render={props => <Projects updatePage={this.props.updatePage} />}
+          /> */}
         </Card>
 
       </Router>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import api from '../utils/api'
-import Drawer from '../components/elements/Drawer'
 import './About.css'
 
 export default class About extends Component {
@@ -95,7 +94,7 @@ export default class About extends Component {
         <div className='card-columns' style={this.style().clearFooter}>
           <div className='card mb-3' style={this.style().hello}>
             <div className='card-body'>
-              <h1 style={this.style().header}>Hello. 👋</h1>
+              <h1 style={this.style().header}>Hello. <span role='img' aria-label='wave'>👋</span></h1>
               <div className='text-justify'>
                 I'm a full stack developer from
                 {' '}
@@ -140,11 +139,10 @@ export default class About extends Component {
                   <h3 style={this.style().header}>{item.title}</h3>
                   <ul style={this.style().list}>
                     {item.listItems.map( (listItem, listIdx, listArr) => {
-                      console.log(typeof listItem[0])
                       if (typeof listItem[0] === 'string') {
                         return <li key={listIdx}><h5>{listItem}</h5></li>
                       } else {
-                        return <li key={listIdx}><img className='list-image' src={listItem.src} alt={`image ${listIdx}`} /></li>
+                        return <li key={listIdx}><img className='list-image' src={listItem.src} alt={`${listIdx} quick facts`} /></li>
                       }
                     })}
                   </ul>
