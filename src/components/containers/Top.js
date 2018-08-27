@@ -124,7 +124,7 @@ export default class NavTop extends React.Component {
       color: this.props.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease',
       fontWeight: 300,
-      background: this.state.scrolling ? this.props.backgroundLight ? '#fff' : '#333' : ''
+      background: this.state.scrolling ? this.props.backgroundLight ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)' : ''
     },
     brand: {
       position: 'absolute',
@@ -137,7 +137,9 @@ export default class NavTop extends React.Component {
       marginTop: '2px',
       fontSize: '20px',
       outline: 'none',
-      color: this.state.closeColor
+      color: this.state.closeColor,
+      display: this.state.isOpen ? 'none' : '',
+      transition: 'all 1s ease'
     },
     collapse: {
       background: this.state.isOpen
@@ -168,12 +170,9 @@ export default class NavTop extends React.Component {
   })
 
   findRoute = page => {
-    console.log(page)
   }
 
   render () {
-    let toggleIcon = this.state.isOpen ? 'angle-up' : 'chevron-circle-down'
-
     return (
       <Router>
         <Container style={this.style().container} fluid>
@@ -195,7 +194,7 @@ export default class NavTop extends React.Component {
               className='mr-auto border-0'
               onClick={this.toggle}
             >
-              <FontAwesomeIcon icon={['fas', toggleIcon]} onMouseEnter={this.hoverClose}
+              <FontAwesomeIcon icon={['fas', 'chevron-circle-down']} onMouseEnter={this.hoverClose}
                 onMouseLeave={this.hoverClose} />
             </NavbarToggler>
             <Collapse

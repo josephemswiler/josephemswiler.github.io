@@ -1,0 +1,34 @@
+.button-text {
+    color: #333;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    animation: loadText 2s ease;
+}
+
+@keyframes loadText {
+    0% {
+        color: #fff;
+        box-shadow: 0 0px 0px rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        color: #333;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4)
+    }
+}
+
+// .button:hover {
+//     animation: color-me-in 2s ease infinite;
+//   }
+
+// @keyframes color-me-in {
+// /* You could think of as "step 1" */
+// 0% {
+//  box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
+// }
+// 50% {
+//    box-shadow: 0 0 1.5em #fff, 0 1.25em 1.5em rgba(#000, .2);
+// }
+// 100% {
+//  box-shadow: 0 0 1em #fff, 0 0.75em 1em rgba(#000, .2);
+// }
+// }

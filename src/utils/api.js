@@ -201,6 +201,7 @@ export default {
       title: 'Currently Listening',
       listItems: [
         'Arctic Monkeys 🐵',
+        'Cut Copy',
         'Foals 🦄',
         'BØRNS',
         'Digitalism 🤖',

@@ -13,8 +13,9 @@
 .project-name {
   font-weight: 900;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0.25rem; }
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.25rem;
+  width: 50%; }
   .project-name h3, .project-name p {
     margin: 0; }
 

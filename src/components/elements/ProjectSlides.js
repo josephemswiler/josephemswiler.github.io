@@ -17,28 +17,34 @@ library.add(fab)
 
 const items = [
   {
-    src: 'https://i.imgur.com/rb90vz8.png',
-    altText: 'An app',
-    caption: 'Found',
-    name: 'Found'
-  },
-  {
+    name: 'Spacebnb',
     src: 'https://i.imgur.com/UtFA1Ev.png',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    name: 'Spacebnb'
+    link: 'http://space-bnb.now.sh/',
+    github: 'https://github.com/Philosec/space-bnb'
   },
   {
+    name: 'Found',
+    src: 'https://i.imgur.com/rb90vz8.png',
+    link: 'http://found-jfe.herokuapp.com/',
+    github: 'https://github.com/josephemswiler/found'
+  },
+  {
+    name: 'Jello',
     src: 'https://i.imgur.com/yQSxnOg.jpg',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    name: 'Jello'
+    link: 'http://jello-jfe.herokuapp.com/',
+    github: 'https://github.com/josephemswiler/jello'
   },
   {
+    name: 'Dutch',
     src: 'https://i.imgur.com/XWtoysn.png',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    name: 'Dutch'
+    link: 'Modal',
+    github: 'Modal'
+  },
+  {
+    name: 'Events',
+    src: 'https://i.imgur.com/XWtoysn.png',
+    link: 'Modal',
+    github: 'Modal'
   }
 ]
 
@@ -98,6 +104,7 @@ class ProjectSlides extends Component {
       justifyContent: 'center'
     },
     icon: {
+      marginLeft: 10,
       fontSize: 32
     }
   })
@@ -127,23 +134,6 @@ class ProjectSlides extends Component {
                       alt={item.altText}
                       onClick={() => console.log(item.name)}
                     />
-                    <CarouselCaption
-                      captionText={[
-                        item.name,
-                        <span className='captionIcons'>
-                          {' '}
-                          <FontAwesomeIcon
-                            style={this.style().icon}
-                            icon={['fab', 'github']}
-                          />
-                          <FontAwesomeIcon
-                            style={this.style().icon}
-                            icon={['fas', 'external-link-square-alt']}
-                          />
-                        </span>
-                      ]}
-                      className='project-name'
-                    />
                   </CarouselItem>
                 )
               })}
@@ -163,16 +153,19 @@ class ProjectSlides extends Component {
         <Row>
           <Col>
             <h1 className='pt-3' style={this.style().name}>
-              {/* {items[activeIndex].name}
-              <FontAwesomeIcon
-                style={this.style().icon}
-                icon={['fab', 'github']}
-              />
-              <FontAwesomeIcon
-                style={this.style().icon}
-                icon={['fas', 'external-link-square-alt']}
-              /> */}
-
+              {items[activeIndex].name}
+              <a href={items[activeIndex].github !== 'Modal' ? items[activeIndex].github : ''} target='_blank'>
+                <FontAwesomeIcon
+                  style={this.style().icon}
+                  icon={['fab', 'github']}
+                />
+              </a>
+              <a href={items[activeIndex].link !== 'Modal' ? items[activeIndex].link : ''} target='_blank'>
+                <FontAwesomeIcon
+                  style={this.style().icon}
+                  icon={['fas', 'external-link-square-alt']}
+                />
+              </a>
             </h1>
           </Col>
         </Row>

@@ -101,7 +101,7 @@ export default class About extends Component {
                 {' '}
                 <span style={{ fontWeight: 900 }}>Austin, TX</span>
                 {' '}
-                with a proficiency in UI / UX and the skills listed below. You can find me on most platforms
+                with a proficiency in UI / UX and the skills listed alphabetically below. You can find me on most platforms
                 {' '}
                 <span style={{ fontWeight: 900 }}>@josephemswiler</span>
                 . Here are some quick facts about me!

@@ -36,7 +36,7 @@ export default class NavBottom extends Component {
     }
     if (prevProps.page !== this.props.page && this.props.page === 'About') {
         this.setState({
-          background: '#fff',
+          background: 'rgba(255,255,255,0.8)',
           transition: 'all 1s ease'
         })
     } else if (prevProps.page !== this.props.page) {
