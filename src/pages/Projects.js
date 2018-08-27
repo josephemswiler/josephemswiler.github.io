@@ -127,7 +127,8 @@ class Projects extends Component {
     swipe: {
       width: '100%',
       height: '100%',
-      marginBottom: 72
+      overflow: 'hidden',
+      justifyContent: 'center',
     }
   })
 
@@ -174,39 +175,32 @@ class Projects extends Component {
               </Link>
             </DropdownMenu>
           </ButtonDropdown>
-
           <Container style={this.style().swipe} className='mt-3 text-center'>
-          <p><span className='swiping' role='img' aria-label='swipe'><i>👆</i></span></p><p>Swipe to browse, or use the drop down above.</p>
-            <SwipeableRoutes enableMouseEvents>
-              {this.state.projectList.map( (item, idx) => {
+            <p>
+              <span className='swiping' role='img' aria-label='swipe'>
+                <i>👆</i>
+              </span>
+            </p>
+            <p>Swipe to browse, or use the drop down above.</p>
+            <SwipeableRoutes
+              enableMouseEvents
+              className='swipeable-route-wrapper'
+            >
+              {this.state.projectList.map((item, idx) => {
                 return (
                   <Route
-                  key={idx}
-                path={`/projects/${api.projects[item].name}`}
-                render={props => (
-                  <ProjectSlide key={api.projects[item].name} updatePage={this.props.updatePage} project={api.projects[item]} />
-                )}
-              />
+                    key={idx}
+                    path={`/projects/${api.projects[item].name}`}
+                    render={props => (
+                      <ProjectSlide
+                        key={api.projects[item].name}
+                        updatePage={this.props.updatePage}
+                        project={api.projects[item]}
+                      />
+                    )}
+                  />
                 )
               })}
-              {/* <Route
-                path='/projects/spacebnb'
-                render={props => (
-                  <ProjectSlide key='spacebnb' updatePage={this.props.updatePage} project={api.projects['spacebnb']} />
-                )}
-              />
-              <Route path='/projects/jello' render={props => (
-                  <Spacebnb key='jello' updatePage={this.props.updatePage} project='jello' />
-                )} />
-              <Route path='/projects/found' render={props => (
-                  <Found key='found' updatePage={this.props.updatePage} />
-                )} />
-              <Route path='/projects/dutch' render={props => (
-                  <Dutch key='dutch' updatePage={this.props.updatePage} />
-                )} />
-              <Route path='/projects/events' render={props => (
-                  <Events key='events' updatePage={this.props.updatePage} />
-                )} /> */}
             </SwipeableRoutes>
           </Container>
         </Container>

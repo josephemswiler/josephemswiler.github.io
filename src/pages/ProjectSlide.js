@@ -10,9 +10,9 @@ export default class ProjectSlide extends Component {
   style = () => ({
     container: {
       background: this.props.project.background,
-      height: 400,
+      maxHeight: 490,
       width: '100%',
-    //   position: 'relative',
+      overflow: 'hidden'
     },
     row: {
       display: 'flex',
@@ -21,18 +21,16 @@ export default class ProjectSlide extends Component {
       height: '100%',
       width: '100%',
       zIndex: 1,
-    },
-    mobileWrapper: {
-        display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      overflow: 'hidden'
     },
     mobile: {
-        position: 'absolute',
-        width: '100%',
-        top: -220,
-        left: 0,
+        width: '60%',
+        objectFit: 'cover',
+        maxHeight: 490,
         zIndex: 0
+    },
+    absolute: {
+        position: 'absolute'
     },
     name: {
       fontWeight: 900,
@@ -51,7 +49,10 @@ export default class ProjectSlide extends Component {
     return (
       <Container style={this.style().container} className='rounded'>
         <Row style={this.style().row}>
-          <Col>
+        <Col>
+        <img style={this.style().mobile} src={this.props.project.mobileImage} alt='a preview of this app on a mobile device' />
+        </Col>
+          <Col style={this.style().absolute}>
           <h1 style={this.style().name}>
           {this.props.project.name}
           </h1>
@@ -69,14 +70,7 @@ export default class ProjectSlide extends Component {
                   icon={['fas', 'external-link-square-alt']}
                 />
               </a>
-              <Row>
-                  <Col style={this.style().mobileWrapper}>
-                  <img style={this.style().mobile} src={this.props.project.mobileImage} alt='a preview of this app on a mobile device' />
-                  </Col>
-                  <Col>
-                  <p className='mt-3 text-left' style={this.style().description}>{this.props.project.description}</p>
-                  </Col>
-              </Row>
+              <p className='mt-3' style={this.style().description}>{this.props.project.description}</p>
           </Col>
         </Row>
       </Container>

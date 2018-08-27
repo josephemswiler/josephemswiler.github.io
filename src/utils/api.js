@@ -271,7 +271,8 @@ export default {
       link: 'http://jello-jfe.herokuapp.com/',
       github: 'https://github.com/josephemswiler/jello',
       background: `radial-gradient(circle, #ffda79, #ea9d7a, #b0727a, #695363, #333333)`,
-      description: 'A clone of a popular web-based project management application (hint: rhymes with jello).'
+      description: 'A clone of a popular web-based project management application (hint: rhymes with jello).',
+      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     },
     found: {
       name: 'Found',
@@ -279,7 +280,8 @@ export default {
       link: 'http://found-jfe.herokuapp.com/',
       github: 'https://github.com/josephemswiler/found',
       background: `radial-gradient(circle, #34ace0, #5189b4, #546987, #494c5b, #333333)`,
-      description: 'A web scraper that finds the latest clothing & apparel in real-time.'
+      description: 'A web scraper that finds the latest clothing & apparel in real-time.',
+      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     },
     dutch: {
       name: 'Dutch',
@@ -287,7 +289,8 @@ export default {
       link: 'Modal',
       github: 'Modal',
       background: `radial-gradient(circle, #ff5252, #cd476f, #8f4772, #57415c, #333333)`,
-      description: 'iOS & Android native app (deployed from one codebase) to help friends split receipts.'
+      description: 'iOS & Android native app (deployed from one codebase) to help friends split receipts.',
+      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     },
     events: {
       name: 'Events',
@@ -295,7 +298,8 @@ export default {
       link: 'Modal',
       github: 'Modal',
       background: `radial-gradient(circle, #706fd3, #625fa8, #54507f, #444158, #333333)`,
-      description: 'iOS & Android hybrid app (deployed from one codebase) to schedule events with friends.'
+      description: 'iOS & Android hybrid app (deployed from one codebase) to schedule events with friends.',
+      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     }
   }
 }

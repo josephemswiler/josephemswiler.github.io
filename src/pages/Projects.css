@@ -1,6 +1,10 @@
 .dropdown-menu a, .dropdown-menu a:hover, .dropdown-menu a:focus {
   text-decoration: none; }
 
+.swipeable-route-wrapper {
+  overflow: hidden;
+  height: 100%; }
+
 .icon {
   margin: 10;
   font-size: 2rem;
