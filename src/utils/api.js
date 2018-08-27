@@ -261,7 +261,8 @@ export default {
       src: 'https://i.imgur.com/UtFA1Ev.png',
       link: 'http://space-bnb.now.sh/',
       github: 'https://github.com/Philosec/space-bnb',
-      background: `radial-gradient(circle, #33d9b2, #00adb4, #347f99, #465567, #333333)`,
+      background: `radial-gradient(circle, #706fd3, #625fa8, #54507f, #444158, #333333)`, 
+      color: '#fff',
       description: 'A virtual-reality bnb web app developed with Three.js, a webVR library that uses webGL.',
       mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     },
@@ -271,8 +272,9 @@ export default {
       link: 'http://jello-jfe.herokuapp.com/',
       github: 'https://github.com/josephemswiler/jello',
       background: `radial-gradient(circle, #ffda79, #ea9d7a, #b0727a, #695363, #333333)`,
+      color: '#333',
       description: 'A clone of a popular web-based project management application (hint: rhymes with jello).',
-      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
+      mobileImage: 'https://i.imgur.com/MLluoWu.png'
     },
     found: {
       name: 'Found',
@@ -280,8 +282,9 @@ export default {
       link: 'http://found-jfe.herokuapp.com/',
       github: 'https://github.com/josephemswiler/found',
       background: `radial-gradient(circle, #34ace0, #5189b4, #546987, #494c5b, #333333)`,
+      color: '#fff',
       description: 'A web scraper that finds the latest clothing & apparel in real-time.',
-      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
+      mobileImage: 'https://i.imgur.com/wnLSNMD.png'
     },
     dutch: {
       name: 'Dutch',
@@ -289,17 +292,19 @@ export default {
       link: 'Modal',
       github: 'Modal',
       background: `radial-gradient(circle, #ff5252, #cd476f, #8f4772, #57415c, #333333)`,
+      color: '#333',
       description: 'iOS & Android native app (deployed from one codebase) to help friends split receipts.',
-      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
+      mobileImage: 'https://i.imgur.com/vWvQPpn.png'
     },
     events: {
       name: 'Events',
       src: '',
       link: 'Modal',
       github: 'Modal',
-      background: `radial-gradient(circle, #706fd3, #625fa8, #54507f, #444158, #333333)`,
+      background:`radial-gradient(circle, #33d9b2, #00adb4, #347f99, #465567, #333333)`,
+      color: '#333',
       description: 'iOS & Android hybrid app (deployed from one codebase) to schedule events with friends.',
-      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
+      mobileImage: 'https://i.imgur.com/9da6cit.png'
     }
   }
 }
