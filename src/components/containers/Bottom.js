@@ -155,7 +155,6 @@ export default class NavBottom extends Component {
             icon={['fab', 'github']}
           />
         </a>
-
         <a
           style={this.style().link}
           href='https://www.linkedin.com/in/josephemswiler/'

@@ -77,7 +77,8 @@ export default class About extends Component {
       paddingBottom: '5rem'
     },
     listCard: {
-      background: '#f7f1e3'
+      background: this.colors[Math.floor(Math.random() * Math.floor(this.colors.length))],
+      transition: 'all 2s ease'
     }
   })
 
@@ -86,121 +87,6 @@ export default class About extends Component {
     'rgba(52,172,224,0.5)',
     'rgba(255,218,121,0.5)',
     'rgba(255,82,82,0.5)'
-  ]
-
-  quickFacts = [
-    {
-      title: 'Favorite Hobbies',
-      listItems: [
-        'Running',
-        'Cooking 👨‍🍳',
-        'WebVR',
-        'More developing 👨‍💻',
-        'More designing'
-      ]
-    },
-    {
-      title: 'Favorite Restaurants',
-      listItems: [
-        'Sway 🇹🇭',
-        'Terry Black’s BBQ',
-        'Torchy’s Tacos 🌮',
-        'Pacha Organic Café',
-        'Pinthouse Pizza',
-        'Ramen Tatsu-Ya'
-      ]
-    },
-    {
-      title: 'Favorite Hikes',
-      listItems: [
-        'Shenandoah National Park',
-        'Multnomah Falls',
-        'Burlington Waterfront 🌲',
-        'Piazzale Michelangelo',
-        'Park Güell 🇪🇸'
-      ]
-    },
-    {
-      title: 'Favorite Breweries',
-      listItems: [
-        'Pinthouse Pizza 🙃',
-        'Jester King',
-        'St. Elmo',
-        'Oddwood 🤷',
-        'Zilker',
-        'Lazarus'
-      ]
-    },
-    {
-      title: 'Favorite Hot Sauce',
-      listItems: [
-        'Yellowbird Habanero',
-        'Tacodeli Salsa Doña 💃🏻',
-        `Perry's Pepper Sauce`
-      ]
-    },
-    {
-      title: 'Currently Listening',
-      listItems: [
-        'Arctic Monkeys 🐵',
-        'Foals 🦄',
-        'BØRNS',
-        'Digitalism 🤖',
-        'Dwight Yoakham',
-        'Chance the Rapper'
-      ]
-    },
-    {
-      title: 'Most Used Gif',
-      listItems: [
-        {
-        src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
-        }
-      ],
-    },
-    {
-      title: 'Favorite Movies',
-      listItems: [
-        'Hot Fuzz 🕵',
-        'The Man Who Knew Too Little',
-        'The Room',
-        'James Bond 🤵',
-        'Indiana Jones'
-      ]
-    },
-    {
-      title: 'Favorite Museums',
-      listItems: [
-        'National Air and Space Museum 🚀',
-        'The Blanton Museum of Art',
-        'J. Paul Getty Museum',
-        'National Gallery of Art 👩‍🎨',
-        'Uffizi Gallery',
-        'Louvre Museum 🇫🇷'
-      ]
-    },
-    {
-      title: 'Currently Reading',
-      listItems: [
-        'Ego Is The Enemy',
-        'Lonely Planet Italian Phrasebook 🇮🇹',
-        'Eloquent JavaScript'
-      ]
-    },
-    {
-      title: 'Favorite Dinosaur',
-      listItems: [
-        'Stegosaurus'
-      ]
-    },
-    {
-      title: 'Favorite Tacos',
-      listItems: [
-        'Al Pastor',
-        'Migas',
-        'Carne Asada Con Crema'
-      ]
-    }
   ]
 
   render () {
@@ -247,7 +133,7 @@ export default class About extends Component {
               })}
             </div>
           </div>
-          {this.quickFacts.map( (item, idx) => {
+          {api.quickFacts.map( (item, idx) => {
             return (
               <div key={idx} style={this.style().listCard} className='card mb-3'>
                 <div className='card-body'>

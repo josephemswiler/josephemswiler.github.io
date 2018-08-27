@@ -48,7 +48,7 @@ class App extends Component {
       alignItems: 'center',
       height: '100vh',
       width: '100vw',
-      background: this.state.page === 'Home' ? 'transparent' : this.state.backgroundLight ? '#fff' : '#333',
+      background: !this.state.page ? 'transparent' : this.state.page === 'Home' ? 'transparent' : this.state.backgroundLight ? '#fff' : '#333',
       color: this.state.backgroundLight ? '#333' : '#fff',
       transition: 'all 1s ease'
     }

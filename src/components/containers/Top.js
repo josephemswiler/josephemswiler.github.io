@@ -14,7 +14,6 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { isAbsolute } from 'upath'
 
 library.add(fas)
 
@@ -135,6 +134,7 @@ export default class NavTop extends React.Component {
       zIndex: 10
     },
     toggler: {
+      marginTop: '2px',
       fontSize: '20px',
       outline: 'none',
       color: this.state.closeColor
@@ -147,7 +147,6 @@ export default class NavTop extends React.Component {
       padding: this.state.isOpen ? 30 : 0,
       position: 'relative'
     },
-    mobileNav: {},
     closeToggle: {
       display: this.state.isOpen ? 'block' : 'none',
       position: 'absolute',
@@ -210,7 +209,7 @@ export default class NavTop extends React.Component {
                 onMouseEnter={this.hoverClose}
                 onMouseLeave={this.hoverClose}
               />
-              <Nav className='mr-auto' navbar style={this.style().mobileNav}>
+              <Nav className='mr-auto' navbar>
                 <NavItem>
                   <Link
                     className='nav-link'
@@ -234,7 +233,6 @@ export default class NavTop extends React.Component {
               </Nav>
             </Collapse>
           </Navbar>
-
           <Route
             exact
             path='/'
@@ -253,7 +251,6 @@ export default class NavTop extends React.Component {
             path='/projects/apps'
             render={props => <Projects updatePage={this.props.updatePage} />}
           />
-
         </Container>
       </Router>
     )
