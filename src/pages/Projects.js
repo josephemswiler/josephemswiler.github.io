@@ -44,6 +44,8 @@ import {
   Container
 } from 'reactstrap'
 import './Projects.css'
+import ProjectSlide from './ProjectSlide'
+import api from '../utils/api'
 import Spacebnb from './project-pages/Spacebnb'
 import Jello from './project-pages/Jello'
 import Found from './project-pages/Found'
@@ -69,7 +71,8 @@ class Projects extends Component {
 
     this.toggle = this.toggle.bind(this)
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      projectList: Object.keys(api.projects)
     }
   }
 
@@ -175,14 +178,25 @@ class Projects extends Component {
           <Container style={this.style().swipe} className='mt-3 text-center'>
           <p><span className='swiping' role='img' aria-label='swipe'><i>👆</i></span></p><p>Swipe to browse, or use the drop down above.</p>
             <SwipeableRoutes enableMouseEvents>
-              <Route
+              {this.state.projectList.map( (item, idx) => {
+                return (
+                  <Route
+                  key={idx}
+                path={`/projects/${api.projects[item].name}`}
+                render={props => (
+                  <ProjectSlide key={api.projects[item].name} updatePage={this.props.updatePage} project={api.projects[item]} />
+                )}
+              />
+                )
+              })}
+              {/* <Route
                 path='/projects/spacebnb'
                 render={props => (
-                  <Spacebnb key='spacebnb' updatePage={this.props.updatePage} />
+                  <ProjectSlide key='spacebnb' updatePage={this.props.updatePage} project={api.projects['spacebnb']} />
                 )}
               />
               <Route path='/projects/jello' render={props => (
-                  <Jello key='jello' updatePage={this.props.updatePage} />
+                  <Spacebnb key='jello' updatePage={this.props.updatePage} project='jello' />
                 )} />
               <Route path='/projects/found' render={props => (
                   <Found key='found' updatePage={this.props.updatePage} />
@@ -192,7 +206,7 @@ class Projects extends Component {
                 )} />
               <Route path='/projects/events' render={props => (
                   <Events key='events' updatePage={this.props.updatePage} />
-                )} />
+                )} /> */}
             </SwipeableRoutes>
           </Container>
         </Container>

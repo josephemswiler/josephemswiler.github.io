@@ -1,6 +1,16 @@
 .dropdown-menu a, .dropdown-menu a:hover, .dropdown-menu a:focus {
   text-decoration: none; }
 
+.icon {
+  margin: 10;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.5; }
+
+.icon:hover {
+  opacity: 1;
+  transition: all 1s ease; }
+
 .swiping {
   margin: 50px;
   position: relative;

@@ -213,9 +213,9 @@ export default {
       title: 'Most Used Gif',
       listItems: [
         {
-        src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
+          src: 'https://media.giphy.com/media/vMnuZGHJfFSTe/giphy.gif'
         }
-      ],
+      ]
     },
     {
       title: 'Favorite Movies',
@@ -248,39 +248,54 @@ export default {
     },
     {
       title: 'Favorite Dinosaur',
-      listItems: [
-        'Stegosaurus'
-      ]
+      listItems: ['Stegosaurus']
     },
     {
       title: 'Favorite Tacos',
-      listItems: [
-        'Al Pastor',
-        'Migas',
-        'Carne Asada Con Crema'
-      ]
+      listItems: ['Al Pastor', 'Migas', 'Carne Asada Con Crema']
     }
   ],
-  projects: [
-    {
-      src: 'https://i.imgur.com/rb90vz8.png',
-      altText: 'An app',
-      caption: 'Found'
-    },
-    {
-      src: 'https://i.imgur.com/XWtoysn.png',
-      altText: 'alt texxxxxt',
-      caption: 'Dutch'
-    },
-    {
+  projects: {
+    spacebnb: {
+      name: 'Spacebnb',
       src: 'https://i.imgur.com/UtFA1Ev.png',
-      altText: 'Slide 3',
-      caption: 'Spacebnb'
+      link: 'http://space-bnb.now.sh/',
+      github: 'https://github.com/Philosec/space-bnb',
+      background: `radial-gradient(circle, #33d9b2, #00adb4, #347f99, #465567, #333333)`,
+      description: 'A virtual-reality bnb web app developed with Three.js, a webVR library that uses webGL.',
+      mobileImage: 'https://i.imgur.com/j9Q9oTy.png'
     },
-    {
+    jello: {
+      name: 'Jello',
       src: 'https://i.imgur.com/yQSxnOg.jpg',
-      altText: 'Slide 3',
-      caption: 'Jello'
+      link: 'http://jello-jfe.herokuapp.com/',
+      github: 'https://github.com/josephemswiler/jello',
+      background: `radial-gradient(circle, #ffda79, #ea9d7a, #b0727a, #695363, #333333)`,
+      description: 'A clone of a popular web-based project management application (hint: rhymes with jello).'
     },
-  ]
+    found: {
+      name: 'Found',
+      src: 'https://i.imgur.com/rb90vz8.png',
+      link: 'http://found-jfe.herokuapp.com/',
+      github: 'https://github.com/josephemswiler/found',
+      background: `radial-gradient(circle, #34ace0, #5189b4, #546987, #494c5b, #333333)`,
+      description: 'A web scraper that finds the latest clothing & apparel in real-time.'
+    },
+    dutch: {
+      name: 'Dutch',
+      src: 'https://i.imgur.com/XWtoysn.png',
+      link: 'Modal',
+      github: 'Modal',
+      background: `radial-gradient(circle, #ff5252, #cd476f, #8f4772, #57415c, #333333)`,
+      description: 'iOS & Android native app (deployed from one codebase) to help friends split receipts.'
+    },
+    events: {
+      name: 'Events',
+      src: '',
+      link: 'Modal',
+      github: 'Modal',
+      background: `radial-gradient(circle, #706fd3, #625fa8, #54507f, #444158, #333333)`,
+      description: 'iOS & Android hybrid app (deployed from one codebase) to schedule events with friends.'
+    }
+  }
 }

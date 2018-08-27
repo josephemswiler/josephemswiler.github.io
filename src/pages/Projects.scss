@@ -7,6 +7,17 @@
     }
 }
 
+.icon {
+    margin: 10;
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.icon:hover {
+    opacity: 1;
+    transition: all 1s ease;
+}
 
 $width: 50px;
 
