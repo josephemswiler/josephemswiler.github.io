@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
+import WIPPopover from '../components/elements/WIPPopover'
 import './Projects.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,6 +14,10 @@ export default class ProjectSlide extends Component {
     this.state = {
       imageOpacity: 1
     }
+  }
+
+  componentDidMount () {
+    this.props.updatePage('Projects')
   }
 
   hoverInfo = event => {
@@ -67,7 +72,7 @@ export default class ProjectSlide extends Component {
       paddingBottom: 20
     },
     name: {
-      fontWeight: 900,
+      fontWeight: 900
     },
     icon: {
       marginLeft: 10,
@@ -85,10 +90,57 @@ export default class ProjectSlide extends Component {
     }
   })
 
+  renderIcons = () => {
+    if (this.props.project.link !== 'Modal') {
+      return (
+        <h1 style={this.style().name}>
+          {this.props.project.name}
+
+          <a
+            href={
+              this.props.project.github !== 'Modal'
+                ? this.props.project.github
+                : 'https://josephemswiler.com/'
+            }
+            target='_blank'
+          >
+            <FontAwesomeIcon
+              className='icon'
+              style={this.style().icon}
+              icon={['fab', 'github']}
+            />
+          </a>
+          <a
+            href={
+              this.props.project.link !== 'Modal'
+                ? this.props.project.link
+                : 'https://josephemswiler.com/'
+            }
+            target='_blank'
+          >
+            <FontAwesomeIcon
+              className='icon'
+              style={this.style().icon}
+              icon={['fas', 'external-link-square-alt']}
+            />
+          </a>
+        </h1>
+      )
+    } else {
+      return (
+        <span className='popover-wrapper'>
+          <h1 style={this.style().name} className='d-inline-block'>
+            {this.props.project.name}
+          </h1>
+          <WIPPopover key={this.props.key} projectName={this.props.project.name} />
+        </span>
+      )
+    }
+  }
+
   render () {
     return (
       <Container style={this.style().container} className='rounded'>
-
         <Row style={this.style().row}>
           <Col>
             <img
@@ -102,40 +154,12 @@ export default class ProjectSlide extends Component {
             onMouseEnter={this.hoverInfo}
             onMouseLeave={this.hoverInfo}
           >
-            <h1 style={this.style().name}>
-              {this.props.project.name}
-            
-            <a
-              href={
-                this.props.project.github !== 'Modal'
-                  ? this.props.project.github
-                  : 'https://josephemswiler.com/'
-              }
-              target='_blank'
-            >
-              <FontAwesomeIcon
-                className='icon'
-                style={this.style().icon}
-                icon={['fab', 'github']}
-              />
-            </a>
-            <a
-              href={
-                this.props.project.link !== 'Modal'
-                  ? this.props.project.link
-                  : 'https://josephemswiler.com/'
-              }
-              target='_blank'
-            >
-              <FontAwesomeIcon
-                className='icon'
-                style={this.style().icon}
-                icon={['fas', 'external-link-square-alt']}
-              />
-            </a>
-            </h1>
+            {this.renderIcons()}
           </Col>
-          <p className='mt-3 d-none d-md-block' style={this.style().description}>
+          <p
+            className='mt-3 d-none d-md-block'
+            style={this.style().description}
+          >
             {this.props.project.description}
           </p>
         </Row>

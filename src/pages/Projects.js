@@ -95,27 +95,27 @@ export default class Projects extends Component {
               style={this.style().dropDown}
               className='rounded-bottom'
             >
-              <Link to='/projects/spacebnb'>
+              <Link to='/portfolio/projects/spacebnb'>
                 <DropdownItem>
                   Spacebnb
                 </DropdownItem>
               </Link>
-              <Link to='/projects/jello'>
+              <Link to='/portfolio/projects/jello'>
                 <DropdownItem>
                   Jello
                 </DropdownItem>
               </Link>
-              <Link to='/projects/found'>
+              <Link to='/portfolio/projects/found'>
                 <DropdownItem>
                   Found
                 </DropdownItem>
               </Link>
-              <Link to='/projects/dutch'>
+              <Link to='/portfolio/projects/dutch'>
                 <DropdownItem>
                   Dutch
                 </DropdownItem>
               </Link>
-              <Link to='/projects/events'>
+              <Link to='/portfolio/projects/events'>
                 <DropdownItem>
                   Events
                 </DropdownItem>
@@ -137,7 +137,7 @@ export default class Projects extends Component {
                 return (
                   <Route
                     key={idx}
-                    path={`/projects/${api.projects[item].name}`}
+                    path={`/portfolio/projects/${api.projects[item].name}`}
                     render={props => (
                       <ProjectSlide
                         key={api.projects[item].name}

@@ -184,7 +184,7 @@ export default class NavTop extends React.Component {
             <Link
               style={this.style().brand}
               className='navbar-brand mt-2 mt-md-3'
-              to='/'
+              to='/portfolio'
               onClick={() => this.props.updatePage('Home')}
             >
               Joseph Emswiler
@@ -213,7 +213,7 @@ export default class NavTop extends React.Component {
                   <Link
                     className='nav-link'
                     style={this.style().link}
-                    to='/projects'
+                    to='/portfolio/projects'
                     onClick={() => this.props.updatePage('Projects')}
                   >
                     Projects
@@ -223,7 +223,7 @@ export default class NavTop extends React.Component {
                   <Link
                     className='nav-link'
                     style={this.style().link}
-                    to='/about'
+                    to='/portfolio/about'
                     onClick={() => this.props.updatePage('About')}
                   >
                     About
@@ -234,16 +234,16 @@ export default class NavTop extends React.Component {
           </Navbar>
           <Route
             exact
-            path='/'
+            path='/portfolio'
             render={props => <Home updatePage={this.props.updatePage} />}
           />
           <Route
             exact
-            path='/about'
+            path='/portfolio/about'
             render={props => <About updatePage={this.props.updatePage} />}
           />
           <Route
-            path='/projects'
+            path='/portfolio/projects'
             render={props => <Projects updatePage={this.props.updatePage} />}
           />
         </Container>

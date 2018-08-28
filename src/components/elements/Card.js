@@ -43,7 +43,7 @@ export default class HomeCard extends Component {
           <CardTitle style={this.style().title}>
             Full Stack Web & Mobile Developer
           </CardTitle>
-          <Link to='/projects' style={this.style().link}>
+          <Link to='/portfolio/projects' style={this.style().link}>
             <Button
               block
               style={this.style().button}
@@ -57,7 +57,7 @@ export default class HomeCard extends Component {
 
         <Route
           exact
-          path='/projects'
+          path='/portfolio/projects'
           render={props => <Projects updatePage={this.props.updatePage} />}
         />
       </Card>
