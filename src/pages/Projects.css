@@ -22,12 +22,9 @@
   .swiping i {
     position: absolute;
     display: inline-block;
-    color: red;
     border-radius: 100%;
-    font-family: FontAwesome;
-    animation: hint-finger ease 2s;
-    animation-iteration-count: infinite;
-    z-index: 100;
+    animation: moveHand ease 2s infinite;
+    z-index: 1;
     font-size: 20px; }
   .swiping:before {
     position: absolute;
@@ -37,10 +34,10 @@
     top: 0;
     width: 0;
     height: 10px;
-    animation: hint-dot ease 2s;
-    animation-iteration-count: infinite; }
+    border-radius: 30px;
+    animation: dragScreen ease 2s infinite; }
 
-@keyframes hint-finger {
+@keyframes moveHand {
   0% {
     right: -50px;
     transform: scale(1); }
@@ -58,7 +55,7 @@
     right: -50px;
     transform: scale(1); } }
 
-@keyframes hint-dot {
+@keyframes dragScreen {
   20% {
     opacity: 0;
     width: 0; }
