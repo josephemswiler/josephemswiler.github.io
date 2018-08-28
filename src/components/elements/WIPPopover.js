@@ -38,7 +38,7 @@ export default class WIPPopover extends React.Component {
           <PopoverBody className='popover-modal'>
             {this.props.projectName}
             {' '}
-            is currently under development and the repository is private. For access to the current working prototype, a project demo, or the repository, please email <a href={`mailto:josephemswiler@gmail.com?subject=${this.props.projectName}`}>josephemswiler@gmail.com</a>. 👍
+            is currently under development and the repository is private. For access to the current working prototype, a project demo, or the repository, please email: <a href={`mailto:josephemswiler@gmail.com?subject=${this.props.projectName}`} className='popover-link'>josephemswiler@gmail.com</a> 👍
           </PopoverBody>
         </Popover>
       </div>
