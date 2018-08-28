@@ -43,11 +43,11 @@ export default class HomeCard extends Component {
           <CardTitle style={this.style().title}>
             Full Stack Web & Mobile Developer
           </CardTitle>
-          <Link to='/portfolio/projects' style={this.style().link}>
+          <Link to='/portfolio/projects' style={this.style().link} className='border-animation inside'>
             <Button
               block
               style={this.style().button}
-              className='button-text'
+              className='button-text '
               onClick={() => this.props.updatePage('Projects')}
             >
               Web & Mobile Applications →
