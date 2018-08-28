@@ -9,6 +9,7 @@
 
 .popover-btn:focus, .popover-btn:active, .popover-btn:hover {
   background: #333 !important;
+  opacity: 0.9;
   color: #fff !important; }
 
 .popover-text {
@@ -24,4 +25,10 @@
   align-items: center; }
 
 .popover-modal {
-  background: rgba(255, 255, 255, 0.9); }
+  background: #333 !important;
+  opacity: 0.9;
+  color: #fff !important;
+  font-family: 'Nunito', sans-serif; }
+
+.popover-header {
+  font-weight: 900; }

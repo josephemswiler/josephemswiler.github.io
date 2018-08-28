@@ -93,9 +93,8 @@ export default class ProjectSlide extends Component {
   renderIcons = () => {
     if (this.props.project.link !== 'Modal') {
       return (
-        <h1 style={this.style().name}>
+        <h1 style={this.style().name} className='pt-2'>
           {this.props.project.name}
-
           <a
             href={
               this.props.project.github !== 'Modal'
@@ -128,7 +127,7 @@ export default class ProjectSlide extends Component {
       )
     } else {
       return (
-        <span className='popover-wrapper'>
+        <span className='popover-wrapper pt-1'>
           <h1 style={this.style().name} className='d-inline-block'>
             {this.props.project.name}
           </h1>
@@ -153,6 +152,7 @@ export default class ProjectSlide extends Component {
             style={this.style().absoluteTop}
             onMouseEnter={this.hoverInfo}
             onMouseLeave={this.hoverInfo}
+            className='pt-0'
           >
             {this.renderIcons()}
           </Col>
