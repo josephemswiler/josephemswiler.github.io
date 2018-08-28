@@ -95,31 +95,15 @@ export default class Projects extends Component {
               style={this.style().dropDown}
               className='rounded-bottom'
             >
-              <Link to='/portfolio/projects/spacebnb'>
-                <DropdownItem>
-                  Spacebnb
-                </DropdownItem>
-              </Link>
-              <Link to='/portfolio/projects/jello'>
-                <DropdownItem>
-                  Jello
-                </DropdownItem>
-              </Link>
-              <Link to='/portfolio/projects/found'>
-                <DropdownItem>
-                  Found
-                </DropdownItem>
-              </Link>
-              <Link to='/portfolio/projects/dutch'>
-                <DropdownItem>
-                  Dutch
-                </DropdownItem>
-              </Link>
-              <Link to='/portfolio/projects/events'>
-                <DropdownItem>
-                  Events
-                </DropdownItem>
-              </Link>
+              {this.state.projectList.map((item, idx) => {
+                return (
+                  <Link key={idx} to={`/portfolio/projects/${item}`}>
+                    <DropdownItem>
+                      {item.charAt(0).toUpperCase().concat(item.slice(1))}
+                    </DropdownItem>
+                  </Link>
+                )
+              })}
             </DropdownMenu>
           </ButtonDropdown>
           <Container style={this.style().swipe} className='mt-3 text-center'>

@@ -319,7 +319,7 @@ export default {
     },
     dutch: {
       name: 'Dutch',
-      src: 'https://i.imgur.com/XWtoysn.png',
+      src: '',
       link: 'Modal',
       github: 'Modal',
       background: `radial-gradient(circle, #ff5252, #cd476f, #8f4772, #57415c, #333333)`,
@@ -333,7 +333,7 @@ export default {
       link: 'Modal',
       github: 'Modal',
       background:`radial-gradient(circle, #33d9b2, #00adb4, #347f99, #465567, #333333)`,
-      color: '#333',
+      color: '#fff',
       description: 'iOS & Android hybrid app (deployed from one codebase) to schedule events with friends.',
       mobileImage: 'https://i.imgur.com/9da6cit.png'
     }
