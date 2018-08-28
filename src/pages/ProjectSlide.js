@@ -131,7 +131,7 @@ export default class ProjectSlide extends Component {
           <h1 style={this.style().name} className='d-inline-block'>
             {this.props.project.name}
           </h1>
-          <WIPPopover key={this.props.key} projectName={this.props.project.name} />
+          <WIPPopover projectName={this.props.project.name} />
         </span>
       )
     }

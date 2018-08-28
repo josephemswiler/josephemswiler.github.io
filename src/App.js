@@ -16,13 +16,23 @@ export default class App extends Component {
   }
 
   componentDidMount () {
-    this.updatePage(
-      window.location.pathname
-        .split('/')[1]
-        .charAt(0)
-        .toUpperCase()
-        .concat(window.location.pathname.split('/')[1].slice(1))
-    )
+    if (window.location.pathname.split('/').length > 2) {
+      this.updatePage(
+        window.location.pathname
+          .split('/')[2]
+          .charAt(0)
+          .toUpperCase()
+          .concat(window.location.pathname.split('/')[2].slice(1))
+      )
+    } else if (window.location.pathname.split('/') <= 2) {
+      this.updatePage(
+        window.location.pathname
+          .split('/')[1]
+          .charAt(0)
+          .toUpperCase()
+          .concat(window.location.pathname.split('/')[1].slice(1))
+      )
+    }
   }
 
   updatePage = page => {

@@ -21,8 +21,6 @@ export default class NavTop extends React.Component {
   constructor (props) {
     super(props)
 
-    this.toggle = this.toggle.bind(this)
-    this.tooltipToggle = this.tooltipToggle.bind(this)
     this.state = {
       isOpen: false,
       tooltipOpen: false,
@@ -44,6 +42,24 @@ export default class NavTop extends React.Component {
     }
   }
 
+  updatePageTop = page => {
+    let pageLight = false
+    switch (page) {
+      case 'Home':
+      case 'Portfolio':
+      case 'Projects':
+        break
+      case 'About':
+        pageLight = true
+        break
+      default:
+    }
+    this.setState({
+      backgroundLight: pageLight,
+      page: page
+    })
+  }
+
   windowResize = () => {
     if (window.innerWidth >= 768 && this.state.isOpen) {
       this.handleDropDownClick()
@@ -62,7 +78,7 @@ export default class NavTop extends React.Component {
     }
   }
 
-  toggle () {
+  toggle = () => {
     if (!this.state.isOpen) {
       document.addEventListener('click', this.handleDropDownClick)
       this.props.toggleOverlay()
@@ -72,7 +88,7 @@ export default class NavTop extends React.Component {
     })
   }
 
-  tooltipToggle () {
+  tooltipToggle = () => {
     this.setState({
       tooltipOpen: !this.state.tooltipOpen
     })
