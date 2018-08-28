@@ -68,8 +68,7 @@ export default class Projects extends Component {
     },
     dropDown: {
       width: '200px',
-      background: 'rgba(255,255,255,0.8)',
-      borderRadius: 0
+      background: 'rgba(255,255,255,0.8)'
     },
     swipe: {
       width: '100%',
@@ -87,8 +86,9 @@ export default class Projects extends Component {
             isOpen={this.state.dropdownOpen}
             toggle={this.toggle}
             style={this.style().buttonDropDown}
+            className='border-animation inside'
           >
-            <DropdownToggle style={this.style().button}>
+            <DropdownToggle style={this.style().button} className='dropdown-button'>
               <span className='mt-1'>Featured Projects</span>
             </DropdownToggle>
             <DropdownMenu

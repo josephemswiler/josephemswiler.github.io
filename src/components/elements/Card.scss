@@ -7,9 +7,14 @@
     box-shadow: none;
 }
 
-.button-text:hover {
-    color: #33d9b2;
-    background: rgba(0, 0, 0, 0.6) !important;
+.button-text:hover  {
+    color: #333;
+    background: rgba(51,217,178, 0.7) !important;
+    transition: all 1s ease;
+}
+
+.button-text:focus {
+	box-shadow: none;
 }
    
    .border-animation {
