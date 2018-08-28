@@ -89,7 +89,7 @@ export default class Projects extends Component {
             className='border-animation inside'
           >
             <DropdownToggle style={this.style().button} className='dropdown-button'>
-              <span className='mt-1'>Featured Projects</span>
+              <span>Featured Projects</span>
             </DropdownToggle>
             <DropdownMenu
               style={this.style().dropDown}
