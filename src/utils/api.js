@@ -46,6 +46,11 @@ export default {
       link: 'https://firebase.google.com/'
     },
     {
+      name: 'GraphQL',
+      image: 'https://i.imgur.com/YDlT3bv.png',
+      link: 'https://graphql.org/'
+    },
+    {
       name: 'Handlebars.js',
       image: 'https://i.imgur.com/8DOx15d.png',
       link: 'https://handlebarsjs.com/'
@@ -54,6 +59,11 @@ export default {
       name: 'HTML 5',
       image: 'https://i.imgur.com/1sZs7UC.png',
       link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5'
+    },
+    {
+      name: 'Ionic',
+      image: 'https://i.imgur.com/26Glksh.png',
+      link: 'https://ionicframework.com/'
     },
     {
       name: 'JavaScript',
@@ -126,9 +136,19 @@ export default {
       link: 'https://reactstrap.github.io/'
     },
     {
+      name: 'Redux.js',
+      image: 'https://i.imgur.com/5SMJns9.png',
+      link: 'https://redux.js.org/'
+    },
+    {
       name: 'Robo 3T',
       image: 'https://i.imgur.com/MjfmrL5.png',
       link: 'https://robomongo.org/'
+    },
+    {
+      name: 'Sass',
+      image: 'https://i.imgur.com/m0JCqSu.png',
+      link: 'https://sass-lang.com/'
     },
     {
       name: 'Sequel Pro',
@@ -141,10 +161,21 @@ export default {
       link: 'https://github.com/sequelize/sequelize'
     },
     {
+      name: 'Stencil.js',
+      image: 'https://i.imgur.com/4sDHQUy.png',
+      link: 'https://stenciljs.com/docs/introduction/'
+    },
+
+    {
       name: 'Three.js',
       image: 'https://i.imgur.com/g1MmsEp.png',
       link: 'https://threejs.org/'
-    }
+    },
+    {
+      name: 'TypeScript',
+      image: 'https://i.imgur.com/clqCiLk.png',
+      link: 'https://www.typescriptlang.org/'
+    },
   ],
   quickFacts: [
     {
