@@ -9,7 +9,7 @@
 
 .popover-btn:focus, .popover-btn:active, .popover-btn:hover {
   background: #333 !important;
-  opacity: 0.9;
+  opacity: 0.8;
   color: #fff !important; }
 
 .popover-text {
